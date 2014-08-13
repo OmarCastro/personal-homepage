@@ -566,17 +566,15 @@ body[data-onpage="contact"] .pagelink-contact:hover {
     text-align: center;
     border-top: #369 1.5px solid;
   }
-  .work-list .work {
+  .work {
+    position: relative;
     margin-bottom: 0;
   }
-  .work-list .work .image {
-    display: none;
-  }
-  .work-list .work .description {
-    max-width: 100%;
-  }
-  .work-list .work:last-of-type {
+  .work:last-of-type {
     margin-bottom: 2em;
+  }
+  .work-description {
+    max-width: 100%;
   }
 }
 @media only screen and (max-device-width: 1024px) and (orientation: landscape) and (orientation: landscape), only screen and (max-device-width: 768px) and (orientation: portrait) and (orientation: landscape) {
