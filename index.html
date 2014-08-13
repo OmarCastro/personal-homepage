@@ -12,17 +12,19 @@
 	<body>
 		
 		<div class="main content" touch-action="pan-y">
-		<div class="page" data-page="main">
+		
+		
+		<div class="page main-page" data-page="main">
 		  <h1>Welcome to my home page</h1>
 		  <div class="swipe-notification">Swipe to change page</div>
 		</div>
 
-		<div class="page" data-page="about">
+		<div class="page profile-page" data-page="about">
 		  <div class="profile">
-		    <div class="round image">
-		      <img src="imgs/me.jpg" alt="Photo of the Omar Alejandro Castillo de Castro">
+		    <div class="round image profile-canvas">
+		      <img class="profile-image" src="imgs/me.jpg" alt="Photo of the Omar Alejandro Castillo de Castro">
 		    </div>
-		    <div class="text">
+		    <div class="text profile-text">
 		      <i>Omar Alejandro Castillo de Castro</i>, born in Santo Domingo, Dominican Repubic, is an engineer graduated from
 		      the Faculty of Engineering of University of Porto (FEUP) in the master's degree of Informatics and Computing.
 		      A creative, hard-working, adaptable, caring and responsible person. He likes traveling (not alone) and have a fit body.
@@ -53,13 +55,13 @@
 		</div>
 		
 		<div class="page" data-page="works">
-		  		  <div class="title"><span>works</span></div>
+		  		  <div class="title"><span>Works</span></div>
 
 		
 		<div class="work-list">		  
 		  <div class="work">
-		    <div class="image"><img src="imgs/portfolio02.jpg" alt=""></div>
-		    <div class="description">
+		    <div class="work-canvas"><img class="work-image" src="imgs/portfolio02.jpg" alt=""></div>
+		    <div class="work-description">
   		    <h2>Paragon</h2>
 
 		    A responsive web application developed jointly with Altran Portugal. 
@@ -73,13 +75,13 @@
 
 		    A robotic game project based on the CiberRato Robot Simulation Environment, in which simulates the movement of robots inside a labyrinth. There are 2 types of robots, the cats and the mice, the cats objective is to catch the mouse and the mouse is to avoid getting caught in the labyrinth. The game can also be played unsing a device with gyroscpe and internet as a controller.
 		    </div>
-  		    <div class="image"><img src="imgs/cat-and-mouse.png" alt=""></div>
+		    <div class="work-canvas"><img class="work-image" src="imgs/cat-and-mouse.png" alt=""></div>
   		    <div class="clearfloat"></div>
 		  </div>
 		  
 		<div class="work">
 
-		  <div class="image"><img src="imgs/ARFS.jpg" alt=""></div>
+		    <div class="work-canvas"><img class="work-image" src="imgs/ARFS.jpg" alt=""></div>
 
 		  <div class="description">
   		    <h2>AR Fruit Samurai</h2>
@@ -97,7 +99,7 @@
 
 		    An challenging variant of an asteroid game. It is challenging because the world rotates around the ship instead the ship rotating in the world. The rules to win are simple, destroy the surrounding asteroids while surviving against invading enemy alien ships with better accurancy than a sniper. You can play the game <a target="_blank" href="http://paginas.fe.up.pt/~ei08158/4ano/djco/asteroids/">here.</a>
 		    </div>
-  		    		  <div class="image"><img src="imgs/fpasteroids.jpg" alt=""></div>
+		    <div class="work-canvas"><img class="work-image" src="imgs/fpasteroids.jpg" alt=""></div>
 
   		    <div class="clearfloat"></div>
 		  </div>  
@@ -110,15 +112,22 @@
           <div class="page" data-page="contact">
             <div class="contact">
     
-              <div class="contact-info">
-                		  <div class="title"><span>Contact</span></div>
-
-                <i class="icon-user"></i> Omar Castro<br>
-                <i class="icon-envelope"></i> omar.castro.360@gmail.com	<br>
-                <i class="icon-phone"></i> +351914578611	<br>    
-                <i class="icon-globe"></i> <a href="http://omarcastro.github.io/">http://omarcastro.github.io/</a>	    
+              <div class="contact-box">
+                <div class="title"><span>Contact</span></div>
+                <div class="contact-info">
+                  <i class="icon-user"></i> Omar Castro<br>
+                  <i class="icon-envelope"></i> omar.castro.360@gmail.com	<br>
+                  <i class="icon-phone"></i> +351914578611	<br>    
+                  <i class="icon-globe"></i> <a href="http://omarcastro.github.io/">http://omarcastro.github.io/</a>	
+                </div>
+                <div class="title"><span>Social networks</span></div>
+                <div class="social-icons">
+                  <a class="social-icon" href="https://github.com/OmarCastro"><i class="icon-github"></i></a>	
+                  <a class="social-icon" href="skype:live:omar_alive10?chat"><i class="icon-skype"></i></a>
+                  <a class="social-icon" href="http://www.linkedin.com/pub/omar-castro/6a/221/aab"><i class="icon-linkedin"></i></a>	
+                </div>
               </div>
-                       <div class="qr-contact">
+              <div class="qr-contact">
                 <img src="imgs/qr-contact.svg">
                 <div>Want to save into your phone contacts?<br> You can do it scanning this QR code</div>
               </div>
@@ -128,24 +137,22 @@
 		
 		</div>
 		<div class="top-bar">
-		  <a class="button menu menu-icon">
-            <i class="icon-menu"></i>&nbsp;
-		  </a>
+		  <a class="topbar-button button menu menu-icon icon-menu"></a>
 		    <div class="navigation">
               <ul>
-              <li class="nav-item menu-icon"><a href="#about"><i class="icon-user"></i><span>About</span></a></li>
-              <li class="nav-item menu-icon"><a href="#skills"><i class="icon-signup"></i><span>Skills</span></a></li>
-              <li class="nav-item menu-icon"><a href="#works"><i class="icon-library"></i><span>Works</span></a></li>
-              <li class="nav-item menu-icon"><a href="#contact"><i class="icon-address-book"></i><span>Contact</span></a></li>
+              <li class="nav-item menu-icon"><a class="icon-user" href="#about">About</a></li>
+              <li class="nav-item menu-icon"><a class="icon-signup" href="#skills">Skills</a></li>
+              <li class="nav-item menu-icon"><a class="icon-library" href="#works">Works</a></li>
+              <li class="nav-item menu-icon"><a class="icon-address-book" href="#contact">Contact</a></li>
               </ul>
             </div>
-		  <a class="button home" href=".">Omar Castro</a>
+		  <a class="topbar-button home-button pagelink-main" href=".">Omar Castro</a>
 
-		  <div class="buttons">
-		    <a class="button" href="#about"><i class="icon-user"></i><span>About</span></a>
-		    <a class="button" href="#skills"><i class="icon-signup"></i><span>Skills</span></a>
-		    <a class="button" href="#works"><i class="icon-library"></i><span>Works</span></a>
-		    <a class="button" href="#contact"><i class="icon-address-book"></i><span>Contact</span></a>
+		  <div class="topbar-buttons">
+		    <a class="topbar-button button pagelink-about icon-user" href="#about">About</a>
+		    <a class="topbar-button button pagelink-skills icon-signup" href="#skills">Skills</a>
+		    <a class="topbar-button button pagelink-works icon-library" href="#works">Works</a>
+		    <a class="topbar-button button pagelink-contact icon-address-book" href="#contact">Contact</a>
 		  </div> 
 		</div>
 		

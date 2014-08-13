@@ -16,7 +16,7 @@ if(ismobile){
 }
 
 
-document.querySelector(".button.home").addEventListener("click", function(ev){
+document.querySelector(".home-button").addEventListener("click", function(ev){
   ev.preventDefault();
   window.history.pushState('object', "Omar Castro", ev.target.href);
   window.onhashchange();
@@ -73,6 +73,10 @@ var myElement = document.querySelector('.main.content');
 
 
 var setpage = function (page) {
+    document.body.setAttribute("data-onpage",page.getAttribute("data-page"));
+    if(current == page){
+      return; 
+    }
     var classList = current.classList;
     nav.classList.remove("active");
 
@@ -86,7 +90,7 @@ var setpage = function (page) {
     page.classList.add("current");
     previous = current;
     current = page;
-    myElement.scrollTop = 0;
+    page.scrollTop = 0;
     if(ismobile){
       hideAddressBar();
     }
@@ -97,26 +101,40 @@ var mc = new Hammer(document.body, {
  swipeVelocityX: 0.4,
 });
 
-mc.on('swipeleft', function(){
+var gotoNextPage = function(){
   var index = parseInt(current.getAttribute("data-index")) || 0;
-  if(index != pagelist.length - 1){
+  if(index < pagelist.length - 1){
     location.hash = pagelist[index+1].getAttribute("data-page")
   }
-});
+}
 
-mc.on('swiperight', function(){
+var gotoPreviousPage = function(){
   var index = parseInt(current.getAttribute("data-index")) || 0;
-  if(index != 0){
+  if(index > 0){
     location.hash = pagelist[index-1].getAttribute("data-page")
   }
-});
+}
+
+
+
+mc.on('swipeleft', gotoNextPage);
+mc.on('swiperight', gotoPreviousPage);
+
+document.onkeydown = function checkKey(e) {
+
+    e = e || window.event;
+
+	// left arrow
+    if (e.keyCode == 37) { gotoPreviousPage() }
+    // right arrow
+    else if (e.keyCode == 39) { gotoNextPage() }
+}
 
 mc.on("drag swipe", function(ev) {
    // only horizontal swipe
    if(Hammer.utils.isVertical(ev.gesture.direction)) {
       return;
    }
-
    // prevent scrolling, so the drag/swipe handler is getting called
    ev.gesture.preventDefault();
 });
