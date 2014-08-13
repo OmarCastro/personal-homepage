@@ -576,6 +576,9 @@ body[data-onpage="contact"] .pagelink-contact:hover {
   .work-description {
     max-width: 100%;
   }
+  .work-canvas {
+    display: none;
+  }
 }
 @media only screen and (max-device-width: 1024px) and (orientation: landscape) and (orientation: landscape), only screen and (max-device-width: 768px) and (orientation: portrait) and (orientation: landscape) {
   .contact-info {
