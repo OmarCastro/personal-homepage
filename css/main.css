@@ -85,13 +85,13 @@ body.desktop .navigation {
   display: block;
   overflow-y: auto;
 }
-.menu-button {
+.menu-icon {
   position: relative;
   display: inline-block;
   height: 60px;
   padding: 0px;
 }
-.menu-button a:before {
+.menu-icon a:before {
   display: inline-block;
   top: 0;
   left: 0;
