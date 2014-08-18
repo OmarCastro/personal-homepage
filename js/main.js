@@ -1,6 +1,7 @@
 var $ = document.querySelector.bind(document),
     $all = document.querySelectorAll.bind(document)
     homeButton = $(".home-button"),
+    nav = $(".navigation"),
     pages = {
   main: $('[data-page="main"]'),
   about: $('[data-page="about"]'),
@@ -8,6 +9,16 @@ var $ = document.querySelector.bind(document),
   works: $('[data-page="works"]'),
   contact: $('[data-page="contact"]')
 };
+
+//$(".menu-button").addEventListener("click", function(ev){
+//  ev.stopPropagation();
+//  nav.classList.toggle("active");
+//});
+//
+//document.body.addEventListener("click", function(ev){
+//  ev.stopPropagation();
+//  nav.classList.remove("active");
+//});
 
 var current = $(".page.current");
 var previous = current;
@@ -61,21 +72,6 @@ function setPageOnHashValue() {
     setpage(pages.main); 
   }
 };
-
-if(isMobile.phone){
-  document.body.classList.add("phone", "mobile", "no-desktop", "no-tablet");
-} else if(isMobile.tablet){
-  document.body.classList.add("no-phone", "mobile", "no-desktop", "tablet");
-} else {
-  document.body.classList.add("no-phone", "no-mobile", "desktop", "no-tablet");
-}
-
-homeButton.addEventListener("click", function(ev){
-  ev.preventDefault();
-  window.history.pushState('object', "Omar Castro", ev.target.href);
-  window.onhashchange();
-});
-
 
 document.onkeydown = function checkKey(e) {
     e = e || window.event;

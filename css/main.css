@@ -15,36 +15,32 @@ html {
   padding: 10px;
   border: black 2px solid;
 }
-body.mobile .navigation {
-  display: none;
-  overflow-y: scroll;
-}
 .navigation {
   box-sizing: border-box;
   border-right: #369 1px solid;
   position: fixed;
-  transition: all 250ms linear;
   top: 61px;
   bottom: 0;
   padding: 0;
   margin: 0;
+  width: 0;
+  z-index: 3;
   background: white;
+  transition: width 250ms linear;
+  overflow-x: hidden;
   overflow-y: auto;
 }
-.navigation ul {
+.navigation > ul {
   bottom: 0;
   padding: 0;
   margin: 0;
 }
 .navigation li {
   height: 60px;
-  transition: width 250ms linear;
-  overflow: hidden;
   list-style-type: none;
   line-height: 60px;
   display: block;
   white-space: nowrap;
-  width: 0;
 }
 .navigation li i {
   height: 100%;
@@ -127,11 +123,26 @@ body.mobile .navigation {
   display: block;
   line-height: 60px;
 }
-.menu-button:hover ~ .navigation li {
+.menu-button:hover ~ .navigation {
   width: 60px;
 }
-.menu-button:focus ~ .navigation > ul > li,
-.navigation:hover > ul > li {
+@media screen and (max-device-width: 1028px) {
+  .menu-button:hover ~ .navigation {
+    width: 15em !important;
+  }
+}
+body.phone .navigation {
+  display: none !important;
+}
+body.phone .navigation.active {
+  display: block !important;
+}
+body.no-phone .navigation {
+  transition: all 250ms linear;
+}
+.phone .menu-button:hover ~ .navigation,
+.menu-button:focus ~ .navigation,
+.navigation:hover {
   width: 15em !important;
 }
 .topbar-button {
@@ -154,18 +165,10 @@ body.mobile .navigation {
   color: white;
   background: #336699;
 }
-body[data-onpage="main"] .pagelink-main,
-body[data-onpage="about"] .pagelink-about,
-body[data-onpage="skills"] .pagelink-skills,
-body[data-onpage="works"] .pagelink-works,
-body[data-onpage="contact"] .pagelink-contact {
+.pagelink-active {
   color: #47a;
 }
-body[data-onpage="main"] .pagelink-main:hover,
-body[data-onpage="about"] .pagelink-about:hover,
-body[data-onpage="skills"] .pagelink-skills:hover,
-body[data-onpage="works"] .pagelink-works:hover,
-body[data-onpage="contact"] .pagelink-contact:hover {
+.pagelink-active:hover {
   color: white;
 }
 @media (max-width: 900px) {
@@ -583,4 +586,7 @@ body.phone .work-canvas {
     -ms-transform: translateX(0%);
     transform: translateX(0%);
   }
+}
+.swipe-notification {
+  display: none;
 }

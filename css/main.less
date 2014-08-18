@@ -26,40 +26,35 @@ font-family: Quicksand;
 
 
 
-body.mobile .navigation{
-  display: none;
-  overflow-y: scroll;
-}
-  
-  
+
+
 .navigation{
   box-sizing: border-box;
   border-right: #369 1px solid;
   position: fixed;
-  transition: all 250ms linear;
   top: @top-bar-height+1;
   bottom: 0;
   padding: 0;
   margin: 0;
+  width: 0;
+  z-index: 3;
   background: white;
+  transition: width 250ms linear;
+  overflow-x: hidden;
   overflow-y: auto;
 
-  ul{
+  > ul{
     bottom: 0;
     padding: 0;
     margin: 0;
   }
   
   li{
-    height: @top-bar-height; 
-    transition: width 250ms linear;
-    overflow: hidden;
-
+    height: @top-bar-height;     
    list-style-type: none;
    line-height: @top-bar-height; 
     display: block;
     white-space: nowrap;
-    width: 0;
 
     i {
       height: 100%; 
@@ -154,12 +149,30 @@ body.mobile .navigation{
     display: block;
     line-height: 60px;
   }
-  &:hover ~ .navigation li{
+  &:hover ~ .navigation{
    width: 60px;
+    @media screen and (max-device-width: 1028px){
+      width: 15em !important;
+    }
   }
 }
 
-.menu-button:focus ~ .navigation > ul > li, .navigation:hover > ul > li{
+
+body.phone .navigation{
+  display: none !important;
+}
+
+body.phone .navigation.active{
+  display:block !important;
+}
+
+body.no-phone .navigation{
+  transition: all 250ms linear;
+}
+
+.phone .menu-button:hover ~ .navigation,
+.menu-button:focus ~ .navigation,
+.navigation:hover{
   width: 15em !important;
 }
 
@@ -185,11 +198,7 @@ body.mobile .navigation{
   }
 }
 
-body[data-onpage="main"] .pagelink-main,
-body[data-onpage="about"] .pagelink-about,
-body[data-onpage="skills"] .pagelink-skills,
-body[data-onpage="works"] .pagelink-works,
-body[data-onpage="contact"] .pagelink-contact{
+.pagelink-active{
   color: #47a; 
   &:hover{
    color: white; 
@@ -457,9 +466,7 @@ body[data-onpage="contact"] .pagelink-contact{
   }
   
 }
-@media only screen and (max-device-width : 1024px) {
 
-}
 
 .contact-box{
   text-align: center;
@@ -615,3 +622,5 @@ body.phone
     transform: translateX(0%);
   }
 }
+
+.swipe-notification{display: none}
