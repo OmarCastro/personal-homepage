@@ -486,6 +486,9 @@ body.no-phone .navigation {
   font-size: 50px;
   margin: 0 20px;
 }
+.main-introduction {
+  height: 100%;
+}
 /*
 *  CONTACT PAGE END
 */
