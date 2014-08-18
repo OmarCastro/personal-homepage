@@ -12,10 +12,6 @@ font-family: Quicksand;
 
 }
 
-body.desktop .mobile-only{
-  display: none;
-}
-
 .title{
   font-size: @titlesize;
   text-align: center;
@@ -30,20 +26,13 @@ body.desktop .mobile-only{
 
 
 
-  
-  
-body.desktop .button.menu:hover ~ .navigation li{
- width: 60px;
+body.mobile .navigation{
+  display: none;
+  overflow-y: scroll;
 }
-
-
-.navigation{
   
-  ul{
-    bottom: 0;
-    padding: 0;
-    margin: 0;
-  }
+  
+.navigation{
   box-sizing: border-box;
   border-right: #369 1px solid;
   position: fixed;
@@ -53,9 +42,13 @@ body.desktop .button.menu:hover ~ .navigation li{
   padding: 0;
   margin: 0;
   background: white;
-    overflow-y: scroll;
+  overflow-y: auto;
 
-
+  ul{
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+  }
   
   li{
     height: @top-bar-height; 
@@ -86,8 +79,8 @@ body.desktop .button.menu:hover ~ .navigation li{
       box-sizing: border-box;
       border-bottom: #369 1px solid;
       &:hover{
-      background: #369;
-    color: white;     
+        background: #369;
+        color: white;     
       }
     }
   }
@@ -97,23 +90,8 @@ body.desktop .button.menu:hover ~ .navigation li{
     position: absolute;
      line-height: @top-bar-height; 
   }
-  
-  display: none;
-  
-  &.active{
-          display: block;
-
-    li{
-     width: 15em !important;
-
-  }
-  }
 }
 
-body.desktop .navigation{
-    display: block;
-  overflow-y: auto;
-}
 
 
 .menu-icon{
@@ -150,7 +128,6 @@ body.desktop .navigation{
   border-bottom: #369 1px solid;
   font-family: Open Sans;  
   a{
-    float: left;
     color: #333;
     text-decoration: none;
     padding: 0px 20px;    
@@ -166,15 +143,24 @@ body.desktop .navigation{
   }
 }
 
-.button.menu{
-    padding: 0px;
-    width: @top-bar-height;
-    &:before{
-      text-align: center;
-      width: 100%;
-      display: block;
-      line-height: 60px;
-    }
+.menu-button{
+  padding: 0px;
+  width: @top-bar-height;
+  border: none;
+  outline: none;
+  &:before{
+    text-align: center;
+    width: 100%;
+    display: block;
+    line-height: 60px;
+  }
+  &:hover ~ .navigation li{
+   width: 60px;
+  }
+}
+
+.menu-button:focus ~ .navigation > ul > li, .navigation:hover > ul > li{
+  width: 15em !important;
 }
 
 
@@ -184,6 +170,7 @@ body.desktop .navigation{
   color: #555;
   text-decoration: none;
   background: none;
+  float: left;
   &:hover{
      color: white;
      background: #336699;
@@ -192,11 +179,9 @@ body.desktop .navigation{
     font-size: 20px;
     margin-right: 0.5em; 
   }
-  &:target{
-    color: #369; 
-  }
-  &:target:focus{
-    border: none; 
+  &:focus{
+    color: white;
+    background: #336699;
   }
 }
 

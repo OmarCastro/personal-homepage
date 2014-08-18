@@ -1,7 +1,5 @@
 var $ = document.querySelector.bind(document),
     $all = document.querySelectorAll.bind(document)
-    nav = $(".navigation"),
-    menu = $(".menu-button"),
     homeButton = $(".home-button"),
     pages = {
   main: $('[data-page="main"]'),
@@ -20,28 +18,12 @@ for(var name in pages){
   pagelist.push(pages[name]);
 }
 
-function activateNav(ev){
-  ev.stopPropagation();
-  nav.classList.add("active");
-};
-
-function deactivateNav(){
-  nav.classList.remove("active");
-};
-
-function toogleNav(ev){
-  ev.stopPropagation();
-  nav.classList.toggle("active");
-};
-
-
 function setpage(page) {
   document.body.setAttribute("data-onpage",page.getAttribute("data-page"));
   if(current == page){
     return; 
   }
   var classList = current.classList;
-  nav.classList.remove("active");
 
   previous.classList.remove("previous");
   classList.add("previous");
@@ -94,11 +76,6 @@ homeButton.addEventListener("click", function(ev){
   window.onhashchange();
 });
 
-document.addEventListener("click",deactivateNav);
-nav.addEventListener("mouseover",activateNav);
-menu.addEventListener("click",toogleNav);
-nav.addEventListener("click",activateNav);
-nav.addEventListener("mouseleave",deactivateNav);
 
 document.onkeydown = function checkKey(e) {
     e = e || window.event;
