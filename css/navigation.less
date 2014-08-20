@@ -1,0 +1,76 @@
+@import "variables.less";
+
+.navigation{
+  box-sizing: border-box;
+  border-right: #369 1px solid;
+  position: fixed;
+  top: @top-bar-height+1;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  z-index: 3;
+  background: white;
+  transition: width 250ms linear;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  > ul {
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  > ul > li{
+    height: @top-bar-height;     
+   list-style-type: none;
+   line-height: @top-bar-height; 
+    display: block;
+    white-space: nowrap;
+    > a{
+        padding: 0;
+        color: #333;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        height: 60px;
+        box-sizing: border-box;
+        border-bottom: #369 1px solid;
+        &:hover{
+          background: #369;
+          color: white;     
+        }
+      }
+  }
+}
+
+
+.menu-button{
+  padding: 0px;
+  width: @top-bar-height;
+  height: @top-bar-height;
+  text-align: left;
+  font-size: inherit;
+  font-family: inherit;
+
+  border: none;
+  outline: none;
+  &:before{
+    text-align: center;
+    width: 100%;
+    display: block;
+    line-height: 60px;
+  }
+  &:hover > .navigation{
+   width: 60px;
+    @media screen and (max-device-width: 1028px){
+      width: 15em !important;
+    }
+  }
+}
+
+.menu-button:focus > .navigation,
+.menu-button:active > .navigation,
+.navigation:hover{
+  width: 15em !important;
+}

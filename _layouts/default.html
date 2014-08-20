@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <script src="js/isMobile.js"></script>
-      <link rel="stylesheet" type="text/css" href="css/main.css">
+      <title>Omar Castro</title>
+      <meta name="author" content="Omar Castro">
+      <meta name="keywords" content="web,omar,engineer">
+      <meta name="description" content="About Omar Castro, a computer engineer">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
     <div class="main content" touch-action="pan-y">
@@ -13,26 +19,29 @@
 
     </div>
     <div class="top-bar">
-      <button class="topbar-button menu-button icon-menu"></button>
-      <div class="navigation">
-        <ul>
-        <li class="nav-item menu-icon"><a class="icon-user" href="about">About</a></li>
-        <li class="nav-item menu-icon"><a class="icon-signup" href="skills">Skills</a></li>
-        <li class="nav-item menu-icon"><a class="icon-library" href="works">Works</a></li>
-        <li class="nav-item menu-icon"><a class="icon-address-book" href="contact">Contact</a></li>
-        </ul>
-      </div>
-      <a class="topbar-button home-button pagelink-main" href=".">Omar Castro</a>
+      <button class="topbar-button menu-button icon-menu">
+        <div class="navigation">
+          <ul>
+          <li class="nav-item menu-icon"><a class="pagelink icon-user" data-to="about" href="about">About</a></li>
+          <li class="nav-item menu-icon"><a class="pagelink icon-signup" data-to="skills" href="skills">Skills</a></li>
+          <li class="nav-item menu-icon"><a class="pagelink icon-library" data-to="works" href="works">Works</a></li>
+          <li class="nav-item menu-icon"><a class="pagelink icon-address-book" data-to="contact" href="contact">Contact</a></li>
+          </ul>
+        </div>
+      </button>
+
+      <a class="topbar-button home-button pagelink{% if page.link == 'index' %} active{% endif %}" data-to="" href=".">Omar Castro</a>
 
       <div class="topbar-buttons">
-        <a class="topbar-button button pagelink-about icon-user" href="about">About</a>
-        <a class="topbar-button button pagelink-skills icon-signup" href="skills">Skills</a>
-        <a class="topbar-button button pagelink-works icon-library" href="works">Works</a>
-        <a class="topbar-button button pagelink-contact icon-address-book" href="contact">Contact</a>
+        <a class="topbar-button button pagelink icon-user{% if page.link == 'about' %} active{% endif %}" data-to="about" href="about">About</a>
+        <a class="topbar-button button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" data-to="skills" href="skills">Skills</a>
+        <a class="topbar-button button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" data-to="works" href="works">Works</a>
+        <a class="topbar-button button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" data-to="contact" href="contact">Contact</a>
       </div> 
-      </div>
 
-    <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+    </div>
+    <script src="js/isMobile.js"></script>
+    <!--script src="http://hammerjs.github.io/dist/hammer.min.js"></script-->
     <script src="js/main.js"></script>
   </body>
 </html>

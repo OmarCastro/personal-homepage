@@ -1,8 +1,7 @@
-@boxsize: 200px;
-@boxmargin: 2px;
-@contentmargin: 20px;
-@titlesize: 20px;
-@top-bar-height: 60px;
+@import "variables.less";
+@import "navigation.less";
+@import "page.less";
+
 
 body, html{
  margin: 0; 
@@ -23,70 +22,6 @@ font-family: Quicksand;
     border: black 2px solid;
   }
 }
-
-
-
-
-
-.navigation{
-  box-sizing: border-box;
-  border-right: #369 1px solid;
-  position: fixed;
-  top: @top-bar-height+1;
-  bottom: 0;
-  padding: 0;
-  margin: 0;
-  width: 0;
-  z-index: 3;
-  background: white;
-  transition: width 250ms linear;
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  > ul{
-    bottom: 0;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li{
-    height: @top-bar-height;     
-   list-style-type: none;
-   line-height: @top-bar-height; 
-    display: block;
-    white-space: nowrap;
-
-    i {
-      height: 100%; 
-      display: inline-block;
-      position: relative;
-      margin: 0;
-      width: @top-bar-height;  
-    }
-    
-    a{
-      padding: 0;
-      color: #333;
-      display: block;
-      width: 100%;
-      cursor: pointer;
-      height: 60px;
-      box-sizing: border-box;
-      border-bottom: #369 1px solid;
-      &:hover{
-        background: #369;
-        color: white;     
-      }
-    }
-  }
-  
-  span{
-    display: inline-block;
-    position: absolute;
-     line-height: @top-bar-height; 
-  }
-}
-
 
 
 .menu-icon{
@@ -138,45 +73,6 @@ font-family: Quicksand;
   }
 }
 
-.menu-button{
-  padding: 0px;
-  width: @top-bar-height;
-  border: none;
-  outline: none;
-  &:before{
-    text-align: center;
-    width: 100%;
-    display: block;
-    line-height: 60px;
-  }
-  &:hover ~ .navigation{
-   width: 60px;
-    @media screen and (max-device-width: 1028px){
-      width: 15em !important;
-    }
-  }
-}
-
-
-body.phone .navigation{
-  display: none !important;
-}
-
-body.phone .navigation.active{
-  display:block !important;
-}
-
-body.no-phone .navigation{
-  transition: all 250ms linear;
-}
-
-.phone .menu-button:hover ~ .navigation,
-.menu-button:focus ~ .navigation,
-.navigation:hover{
-  width: 15em !important;
-}
-
-
 .topbar-button{
   display: inline-block;
   height: @top-bar-height;
@@ -198,7 +94,7 @@ body.no-phone .navigation{
   }
 }
 
-.pagelink-active{
+.pagelink.active{
   color: #47a; 
   &:hover{
    color: white; 
@@ -208,25 +104,6 @@ body.no-phone .navigation{
 @media (max-width: 900px) {.topbar-buttons > .topbar-button:before{content: none;}}
 
 //topbar end
-
-.content{
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-
-.page{
-  height: 100%;
-  overflow-y: auto;
-  position: absolute;
-  width: 100%;
-  padding: 0 @contentmargin;
-  box-sizing: border-box;
-  display: none;
-}
 
 .swipe-notification{
   position: absolute;
@@ -251,9 +128,9 @@ body.no-phone .navigation{
 
 .profile-canvas{
   display: inline-block;
-  max-width: 30%;
+  max-width: 20%;
   text-align: center;
-  margin: 1.5em;
+  margin: 1.5em 5%;
   float: left;
   @media (orientation: portrait){ 
     max-width: 60%;
@@ -271,8 +148,8 @@ body.no-phone .navigation{
 
 .profile-text{
   display: inline-block;
-  width: 50%; 
-  margin: 1.5em;
+  width: 60%; 
+  margin:1.5em 5%;
   @media (orientation: portrait){
     width: 100%; margin: 0; margin-bottom: 3em; 
   }
@@ -504,33 +381,6 @@ body.no-phone .navigation{
    clear: both; 
 }
 
-body.no-phone{
-  .page{
-     transition: transform 400ms ease; 
-  }
-  .page.current{
-    -webkit-animation-name: fromleft;
-    -webkit-animation-duration: 400ms;
-    -webkit-animation-timing-function: ease;
-    animation-duration: 400ms;
-    animation-name: fromleft;
-  }
-  
-  .page.previous ~ .page.current{
-    -webkit-animation-name: fromright;
-    animation-name: fromright;
-  }
-
-  .page.out-of-current{
-    display: block;
-    transform: translate(-100%);
-  }
-
-  .page.current ~ .page.out-of-current{
-    transform: translate(100%);
-  }
-}
-
 //mobile
 
 body.phone
@@ -587,49 +437,14 @@ body.phone
 
 }
 
-
-
-/**ANIMATIONS */ 
-
-@-webkit-keyframes fromright {
-  0% {  -webkit-transform: translateX(100%) }
-  100% {-webkit-transform: translateX(0%);}
-}
-
-@keyframes fromright {
-  0% { 
-    -ms-transform: translateX(100%);
-    transform: translateX(100%) 
-  }
-  100% {
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-  }
-}
-
-@-webkit-keyframes fromleft {
-  0% {  -webkit-transform: translateX(-100%) }
-  100% {-webkit-transform: translateX(0%);}
-}
-
-@keyframes fromleft {
-  0% { 
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%) 
-  }
-  100% {
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-  }
-}
-
 .swipe-notification{display: none}
 
 .main-introduction{
   position: relative;
   height: 100%; 
   background-image: url("../imgs/background.jpg");
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   > h1 {
     position: absolute;
     bottom: 2em;
@@ -643,8 +458,4 @@ body.phone
     right: 2em;
     color: white;
   }
-}
-
-.page.main-page{
-  padding: 0;
 }
