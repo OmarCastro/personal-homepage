@@ -30,18 +30,18 @@
         </div>
       </button>
 
-      <a class="topbar-button home-button pagelink{% if page.link == 'index' %} active{% endif %}" data-to="" href=".">Omar Castro</a>
+      <a class="topbar-button home-button pagelink{% if page.link == 'index' %} active{% endif %}" data-to="" data-pageindex="0" href=".">Omar Castro</a>
 
       <div class="topbar-buttons">
-        <a class="topbar-button button pagelink icon-user{% if page.link == 'about' %} active{% endif %}" data-to="about" href="about">About</a>
-        <a class="topbar-button button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" data-to="skills" href="skills">Skills</a>
-        <a class="topbar-button button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" data-to="works" href="works">Works</a>
-        <a class="topbar-button button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" data-to="contact" href="contact">Contact</a>
+        <a class="topbar-button button pagelink icon-user{% if page.link == 'about' %} active{% endif %}" data-to="about" href="about" data-pageindex="1">About</a>
+        <a class="topbar-button button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" data-to="skills" href="skills" data-pageindex="2">Skills</a>
+        <a class="topbar-button button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" data-to="works" href="works" data-pageindex="3">Works</a>
+        <a class="topbar-button button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" data-to="contact" href="contact" data-pageindex="4">Contact</a>
       </div> 
 
     </div>
     <script src="js/isMobile.js"></script>
-    <!--script src="http://hammerjs.github.io/dist/hammer.min.js"></script-->
+    <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

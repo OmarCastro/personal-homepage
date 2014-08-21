@@ -32,11 +32,29 @@ pages.forEach(function(val){
   });
 });
 
+function toPagelink(link){
+  if(link.href == location.href){ return; }
+  var href = link.getAttribute("data-to");
+  var info = pageInfo[pages.indexOf(href)];
+  gotoPage(info)
+  window.history.pushState({"info":info}, info.title , link.href);
+}
+
 function gotoPage(pageinfo){
   document.title = pageinfo.title;
   $(".page.current").outerHTML = pageinfo.pageHTML
   $(".pagelink.active").classList.remove("active");
   $(".topbar-button.pagelink[data-to=\""+pageinfo.link+"\"]").classList.add("active");
+}
+
+function gotoNextPage(){
+  var index = parseInt($(".pagelink.active").getAttribute("data-pageindex"));
+  if(index < pages.length - 1){ toPagelink($(".pagelink[data-pageindex=\"" +(index + 1)+ "\"]")); }
+}
+
+function gotoPreviousPage(){
+  var index = parseInt($(".pagelink.active").getAttribute("data-pageindex"));
+  if(index >= 0){ toPagelink($(".pagelink[data-pageindex=\"" +(index - 1)+ "\"]")); }
 }
 
 $all(".pagelink").on("click", function(ev){
@@ -47,13 +65,12 @@ $all(".pagelink").on("click", function(ev){
   if (target.nodeType == 3){ // defeat Safari bug
     target = target.parentNode;
   }
-  if(target.href == location.href){
-    return;
-  }
-  var href = target.getAttribute("data-to");
-  var info = pageInfo[pages.indexOf(href)];
-  gotoPage(info)
-  window.history.pushState({"info":info}, info.title , target.href);
+  toPagelink(target)
 })
 
 window.onpopstate = function(event){ gotoPage(event.state.info); }
+
+
+var mc = new Hammer(document.body);
+mc.on('swipeleft', gotoNextPage);
+mc.on('swiperight', gotoPreviousPage);
