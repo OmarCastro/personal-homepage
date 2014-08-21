@@ -80,7 +80,7 @@ function gotoPage(pageinfo){
   $(".pagelink.active").classList.remove("active");
   $(".topbar-button.pagelink[data-to=\""+pageinfo.link+"\"]").classList.add("active");
   ga('send', 'pageview', {
-    'page': '/' + val,
+    'page': '/' + pageinfo.link,
     'title': pageinfo.title
   });
   nav.classList.add("hide");
