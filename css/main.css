@@ -9,7 +9,7 @@
   width: 0;
   z-index: 3;
   background: white;
-  transition: width 250ms linear;
+  transition: width 150ms linear;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -47,7 +47,6 @@
   font-size: inherit;
   font-family: inherit;
   border: none;
-  outline: none;
 }
 .menu-button:before {
   text-align: center;
@@ -55,18 +54,21 @@
   display: block;
   line-height: 60px;
 }
-.menu-button:hover > .navigation {
+.menu-button:hover + .navigation {
   width: 60px;
 }
 @media screen and (max-device-width: 1028px) {
-  .menu-button:hover > .navigation {
-    width: 15em !important;
+  .menu-button:hover + .navigation {
+    width: 12em;
   }
 }
-.menu-button:focus > .navigation,
-.menu-button:active > .navigation,
+.menu-button:focus + .navigation,
+.menu-button:active + .navigation,
 .navigation:hover {
-  width: 15em !important;
+  width: 12em;
+}
+.navigation.hide:hover {
+  width: 0;
 }
 .content {
   position: fixed;

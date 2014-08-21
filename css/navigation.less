@@ -1,5 +1,7 @@
 @import "variables.less";
 
+@nav-full-width: 12em;
+
 .navigation{
   box-sizing: border-box;
   border-right: #369 1px solid;
@@ -11,7 +13,7 @@
   width: 0;
   z-index: 3;
   background: white;
-  transition: width 250ms linear;
+  transition: width 150ms linear;
   overflow-x: hidden;
   overflow-y: auto;
 
@@ -54,23 +56,27 @@
   font-family: inherit;
 
   border: none;
-  outline: none;
+  //outline: none;
   &:before{
     text-align: center;
     width: 100%;
     display: block;
     line-height: 60px;
   }
-  &:hover > .navigation{
-   width: 60px;
+  &:hover + .navigation{
+   width: @top-bar-height;
     @media screen and (max-device-width: 1028px){
-      width: 15em !important;
+      width: @nav-full-width;
     }
   }
 }
 
-.menu-button:focus > .navigation,
-.menu-button:active > .navigation,
+.menu-button:focus + .navigation,
+.menu-button:active + .navigation,
 .navigation:hover{
-  width: 15em !important;
+  width: @nav-full-width;
+}
+
+.navigation.hide:hover{
+  width: 0;
 }
