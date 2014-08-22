@@ -60,7 +60,9 @@ function toPagelink(link){
   var info = pageInfo[pages.indexOf(href)];
   gotoPage(info)
   if(link.href != location.href){
-    window.history.pushState({"info":info}, info.title , link.href);
+    var win = window;
+    win.history.pushState({"info":info}, info.title , link.href);
+    win.scroll(0,0);
   }
 }
 
@@ -75,6 +77,7 @@ function gotoPage(pageinfo){
     'title': pageinfo.title
   });
   nav.classList.add("hide");
+  $(".content").focus();
 }
 
 nav.on("mouseover touchstart",function(ev){nav.classList.remove("hide")})
@@ -86,7 +89,7 @@ function gotoNextPage(){
 
 function gotoPreviousPage(){
   var index = parseInt($(".pagelink.active").getAttribute("data-pageindex"));
-  if(index >= 0){ toPagelink($(".pagelink[data-pageindex=\"" +(index - 1)+ "\"]")); }
+  if(index > 0){ toPagelink($(".pagelink[data-pageindex=\"" +(index - 1)+ "\"]")); }
 }
 
 function pagelinkClick(ev){
@@ -104,3 +107,19 @@ $all(".pagelink").on("click", pagelinkClick);
 
 
 window.onpopstate = function(event){ gotoPage(event.state.info); }
+$(".content").focus();
+
+document.onkeydown = function(e) {
+    e = e || window.event;
+    switch(e.which || e.keyCode) { // 37: left, 38: up, 39: right, 40: down
+        case 37: // left
+          gotoPreviousPage();
+        break;
+        case 39: // right
+          gotoNextPage();
+        break;
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+
+};

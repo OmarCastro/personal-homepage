@@ -1,23 +1,21 @@
-@import "variables.less";
-
-.content{
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
+@require "variables";
 
 .page{
-  height: 100%;
-  overflow-y: auto;
+  //overflow-y: auto;
   position: absolute;
+  top: 60px;
+  bottom: 0;
   width: 100%;
-  padding: 0 @contentmargin;
+  padding: 0 contentmargin;
   box-sizing: border-box;
   display: none;
 }
+
+.page.current{
+  transform: none;
+  display: block;
+}
+
 
 /*
 body.no-phone{

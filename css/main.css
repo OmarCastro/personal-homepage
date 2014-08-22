@@ -1,14 +1,15 @@
 .navigation {
   box-sizing: border-box;
   border-right: #369 1px solid;
+  border-top: #369 1px solid;
   position: fixed;
-  top: 61px;
+  top: 60px;
   bottom: 0;
   padding: 0;
   margin: 0;
   width: 0;
   z-index: 3;
-  background: white;
+  background: #fff;
   transition: width 150ms linear;
   overflow-x: hidden;
   overflow-y: auto;
@@ -37,7 +38,7 @@
 }
 .navigation > ul > li > a:hover {
   background: #369;
-  color: white;
+  color: #fff;
 }
 .menu-button {
   padding: 0px;
@@ -47,6 +48,7 @@
   font-size: inherit;
   font-family: inherit;
   border: none;
+  outline: none;
 }
 .menu-button:before {
   text-align: center;
@@ -54,10 +56,14 @@
   display: block;
   line-height: 60px;
 }
+.menu-button:focus {
+  color: #fff;
+  background: #369;
+}
 .menu-button:hover + .navigation {
   width: 60px;
 }
-@media screen and (max-device-width: 1028px) {
+@media only screen and (max-width: 1040px) {
   .menu-button:hover + .navigation {
     width: 12em;
   }
@@ -70,61 +76,66 @@
 .navigation.hide:hover {
   width: 0;
 }
-.content {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
 .page {
-  height: 100%;
-  overflow-y: auto;
   position: absolute;
+  top: 60px;
+  bottom: 0;
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
   display: none;
 }
-/*
-body.no-phone{
-  .page{
-     transition: transform 400ms ease; 
-  }
-  .page.current{
-    -webkit-animation-name: fromleft;
-    -webkit-animation-duration: 400ms;
-    -webkit-animation-timing-function: ease;
-    animation-duration: 400ms;
-    animation-name: fromleft;
-  }
-  
-  .page.previous ~ .page.current{
-    -webkit-animation-name: fromright;
-    animation-name: fromright;
-  }
-
-  .page.out-of-current{
-    display: block;
-    transform: translate(-100%);
-  }
-
-  .page.current ~ .page.out-of-current{
-    transform: translate(100%);
-  }
+.page.current {
+  transform: none;
+  display: block;
 }
-*/
 .page.main-page {
   padding: 0;
 }
-/**ANIMATIONS */
 @-webkit-keyframes fromright {
   0% {
     -webkit-transform: translateX(100%);
   }
   100% {
     -webkit-transform: translateX(0%);
+  }
+}
+@-webkit-keyframes fromleft {
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+@-moz-keyframes fromright {
+  0% {
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes fromright {
+  0% {
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@-o-keyframes fromright {
+  0% {
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 @keyframes fromright {
@@ -137,12 +148,34 @@ body.no-phone{
     transform: translateX(0%);
   }
 }
-@-webkit-keyframes fromleft {
+@-moz-keyframes fromleft {
   0% {
-    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
   100% {
-    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes fromleft {
+  0% {
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@-o-keyframes fromleft {
+  0% {
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 @keyframes fromleft {
@@ -155,165 +188,6 @@ body.no-phone{
     transform: translateX(0%);
   }
 }
-body,
-html {
-  margin: 0;
-  font-family: Quicksand;
-  overflow-x: hidden;
-  height: 100%;
-}
-.title {
-  font-size: 20px;
-  text-align: center;
-  margin: 3em;
-}
-.title > span {
-  padding: 10px;
-  border: black 2px solid;
-}
-.indexlink {
-  margin: 1em;
-  color: #369;
-  text-align: center;
-  padding: 10px;
-  border: #369 2px solid;
-  display: block;
-  text-decoration: none;
-  font-family: "Open sans";
-}
-.indexlink:hover {
-  color: white;
-  background-color: #369;
-}
-.menu-icon {
-  position: relative;
-  display: inline-block;
-  height: 60px;
-  padding: 0px;
-}
-.menu-icon a:before {
-  display: inline-block;
-  top: 0;
-  left: 0;
-  line-height: 60px;
-  width: 60px;
-  text-align: center;
-}
-.top-bar {
-  z-index: 2;
-  padding: 0;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  font-size: 16px;
-  height: 60px;
-  line-height: 60px;
-  text-transform: uppercase;
-  border-bottom: #369 1px solid;
-  font-family: Open Sans;
-}
-.top-bar a {
-  color: #333;
-  text-decoration: none;
-  padding: 0px 20px;
-}
-.topbar-buttons {
-  float: right;
-}
-@media (max-width: 720px) {
-  .topbar-buttons {
-    display: none;
-  }
-}
-.topbar-button {
-  display: inline-block;
-  height: 60px;
-  color: #555;
-  text-decoration: none;
-  background: none;
-  float: left;
-}
-.topbar-button:hover {
-  color: white;
-  background: #336699;
-}
-.topbar-button:before {
-  font-size: 20px;
-  margin-right: 0.5em;
-}
-.topbar-button:focus {
-  color: white;
-  background: #336699;
-}
-.pagelink.active {
-  color: #47a;
-}
-.pagelink.active:hover {
-  color: white;
-}
-@media (max-width: 900px) {
-  .topbar-buttons > .topbar-button:before {
-    content: none;
-  }
-}
-.swipe-notification {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 1em;
-}
-.page.current {
-  transform: none;
-  display: block;
-}
-/*
-* PROFILE PAGE START
-*/
-.profile {
-  display: block;
-  width: 100%;
-}
-.profile-canvas {
-  display: inline-block;
-  max-width: 20%;
-  text-align: center;
-  margin: 1.5em 5%;
-  float: left;
-}
-@media (orientation: portrait) {
-  .profile-canvas {
-    max-width: 60%;
-    width: 60%;
-    margin: 1.5em auto;
-    float: none;
-    display: block;
-  }
-}
-.profile-image {
-  border-radius: 50%;
-  width: 100%;
-}
-.profile-text {
-  display: inline-block;
-  width: 60%;
-  margin: 1.5em 5%;
-}
-@media (orientation: portrait) {
-  .profile-text {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 3em;
-  }
-}
-/*
-* PROFILE PAGE END
-*/
-/*
-* SKILLS PAGE START
-*/
 .intro {
   text-align: center;
   margin: 2em;
@@ -364,14 +238,14 @@ html {
   width: 200px;
   height: 200px;
   margin: 2px 0;
-  background: #442277;
-  color: white;
+  background: #427;
+  color: #fff;
   overflow: hidden;
   text-align: center;
   padding: 0px;
-  font-size: 25px;
+  font-size: /8;
   font-family: Quicksand;
-  line-height: 200px;
+  line-height: ;
   vertical-align: middle;
 }
 .box::before,
@@ -417,66 +291,213 @@ html {
 }
 .logo-js {
   background-color: #323330;
-  color: #eeeeee;
+  color: #eee;
 }
 .logo-angular::before {
   background-image: url("../icons/angular.png");
 }
 .logo-angular {
-  background-color: #3333ff;
-  color: #eeeeee;
+  background-color: #33f;
+  color: #111;
 }
 .logo-cpp::before {
   background-image: url("../icons/cpp-icon.png");
 }
 .logo-cpp {
-  background-color: #000000;
-  color: #eeeeee;
+  background-color: #000;
+  color: #eee;
 }
 .logo-sails::before {
   background-image: url("../icons/sails.png");
 }
 .logo-sails {
-  background-color: #eeeeee;
-  color: #111111;
+  background-color: #eee;
+  color: #111;
 }
 .logo-docker::before {
   background-image: url("../icons/docker.png");
 }
 .logo-docker {
   background-color: #70afc1;
-  color: #eeeeee;
+  color: #111;
 }
 .logo-windows::before {
   background-image: url("../icons/windows.png");
 }
 .logo-windows {
   background-color: #00adf1;
-  color: #eeeeee;
+  color: #eee;
 }
 .logo-unity::before {
   background-image: url("../icons/unity_icon.png");
 }
 .logo-unity {
-  background-color: #eeeeee;
-  color: #111111;
+  background-color: #eee;
+  color: #111;
 }
 .logo-html::before {
   background-image: url("../icons/html5css3.png");
 }
 .logo-html {
-  background-color: #eeeeee;
-  color: #111111;
+  background-color: #eee;
+  color: #111;
 }
 .logo-dart::before {
   background-image: url("../icons/dart-logo.png");
 }
 .logo-dart {
-  background-color: #eeeeee;
-  color: #111111;
+  background-color: #eee;
+  color: #111;
+}
+:root {
+  margin-top: 60px;
+}
+body,
+html {
+  margin: 0;
+  font-family: Quicksand;
+  overflow-x: hidden;
+  height: 100%;
+}
+.title {
+  font-size: 20px;
+  text-align: center;
+  margin: 3em;
+}
+.title > span {
+  padding: 10px;
+  border: #000 2px solid;
+}
+.indexlink {
+  margin: 1em;
+  color: #369;
+  text-align: center;
+  padding: 10px;
+  border: #369 2px solid;
+  display: block;
+  text-decoration: none;
+  font-family: "Open sans";
+}
+.indexlink:hover {
+  color: #fff;
+  background-color: #369;
+}
+.menu-icon {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  padding: 0px;
+}
+.menu-icon a:before {
+  display: inline-block;
+  line-height: 60px;
+  width: 60px;
+  text-align: center;
+}
+.top-bar {
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  font-size: 16px;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  border-bottom: #369 1px solid;
+  font-family: Open Sans;
+}
+.top-bar a {
+  color: #333;
+  text-decoration: none;
+  padding: 0px 20px;
+}
+.topbar-buttons {
+  float: right;
+}
+@media (max-width: 900px) {
+  .topbar-buttons > .topbar-button:before {
+    content: none;
+  }
+}
+@media (max-width: 720px) {
+  .topbar-buttons {
+    display: none;
+  }
+}
+.topbar-button {
+  display: inline-block;
+  height: 60px;
+  color: #555;
+  text-decoration: none;
+  background: none;
+  float: left;
+  outline: none;
+}
+.topbar-button:hover {
+  color: #fff;
+  background: #369;
+}
+.topbar-button:before {
+  font-size: 20px;
+  margin-right: 0.5em;
+}
+.pagelink.active {
+  color: #47a;
+}
+.pagelink.active:hover {
+  color: #fff;
+}
+.swipe-notification {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
 }
 /*
-* SKILLS PAGE END
+* PROFILE PAGE START
+*/
+.profile {
+  display: block;
+  width: 100%;
+}
+.profile-canvas {
+  display: inline-block;
+  max-width: 20%;
+  text-align: center;
+  margin: 1.5em 5%;
+  float: left;
+}
+@media only screen and (max-width: 720px) and (orientation: portrait) {
+  .profile-canvas {
+    max-width: 50%;
+    width: 50%;
+    margin: 1.5em auto;
+    float: none;
+    display: block;
+  }
+}
+.profile-image {
+  border-radius: 50%;
+  width: 100%;
+}
+.profile-text {
+  display: inline-block;
+  width: 60%;
+  margin: 1.5em 5%;
+}
+@media only screen and (max-width: 720px) and (orientation: portrait) {
+  .profile-text {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 3em;
+  }
+}
+/*
+* PROFILE PAGE END
 */
 /*
 * WORKS PAGE START
@@ -609,11 +630,11 @@ body.phone .work-canvas {
   position: absolute;
   bottom: 2em;
   right: 2em;
-  color: white;
+  color: #fff;
 }
 .main-introduction > h3 {
   position: absolute;
   bottom: 1em;
   right: 2em;
-  color: white;
+  color: #fff;
 }

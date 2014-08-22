@@ -1,12 +1,11 @@
-@import "variables.less";
-
-@nav-full-width: 12em;
+@require "variables";
 
 .navigation{
   box-sizing: border-box;
   border-right: #369 1px solid;
+  border-top: #369 1px solid;
   position: fixed;
-  top: @top-bar-height+1;
+  top: topBarHeight;
   bottom: 0;
   padding: 0;
   margin: 0;
@@ -24,9 +23,9 @@
   }
 
   > ul > li{
-    height: @top-bar-height;     
+    height: topBarHeight     
    list-style-type: none;
-   line-height: @top-bar-height; 
+   line-height: topBarHeight
     display: block;
     white-space: nowrap;
     > a{
@@ -47,34 +46,32 @@
 }
 
 
-.menu-button{
+.menu-button
   padding: 0px;
-  width: @top-bar-height;
-  height: @top-bar-height;
+  width: topBarHeight
+  height: topBarHeight
   text-align: left;
   font-size: inherit;
   font-family: inherit;
-
   border: none;
-  //outline: none;
-  &:before{
+  outline: none;
+  &:before
     text-align: center;
     width: 100%;
     display: block;
     line-height: 60px;
-  }
-  &:hover + .navigation{
-   width: @top-bar-height;
-    @media screen and (max-device-width: 1028px){
-      width: @nav-full-width;
-    }
-  }
-}
+  &:focus
+    color white
+    background #336699
+  &:hover + .navigation
+    width: topBarHeight
+    @media mqTablet
+      width: navFullWidth;
 
 .menu-button:focus + .navigation,
 .menu-button:active + .navigation,
 .navigation:hover{
-  width: @nav-full-width;
+  width: navFullWidth
 }
 
 .navigation.hide:hover{

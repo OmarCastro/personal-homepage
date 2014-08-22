@@ -5,7 +5,8 @@ var clean = require('gulp-clean');
 var concat = require('gulp-concat');  
 var uglify = require('gulp-uglify');  
 var rename = require('gulp-rename');  
-var filesize = require('gulp-filesize');  
+var filesize = require('gulp-filesize'); 
+var stylus = require('gulp-stylus'); 
 var less = require('gulp-less');  
 var changed = require('gulp-changed');  
 var watch = require('gulp-watch');
@@ -31,23 +32,13 @@ gulp.task('vendor', function() {
 });
 
 gulp.task('css', function () {  
-  return gulp.src('less/main.less')
-    .pipe(changed('build/css'))
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
-    }))
-    .pipe(gulp.dest('build/css'))
-    .on('error', gutil.log);
-});
-
-gulp.task('css:watch', function () {  
   watch({
-    glob: 'css/*.less',
+    glob: 'css/*.styl',
     emit: 'one',
     emitOnGlob: false
   }, function(files) {
-    gulp.src('css/main.less')
-      .pipe(less({}))
+    gulp.src('css/main.styl')
+      .pipe(stylus())
       .pipe(gulp.dest('css'))
       .on('error', gutil.log);
   });
