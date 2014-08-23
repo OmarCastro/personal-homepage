@@ -1,50 +1,58 @@
 @require "variables";
 
-.navigation{
-  box-sizing: border-box;
-  border-right: #369 1px solid;
-  border-top: #369 1px solid;
-  position: fixed;
-  top: topBarHeight;
-  bottom: 0;
-  padding: 0;
-  margin: 0;
-  width: 0;
-  z-index: 3;
-  background: white;
-  transition: width 150ms linear;
-  overflow-x: hidden;
-  overflow-y: auto;
+.navigation
+  box-sizing border-box
+  border-right #369 1px solid
+  border-top #369 1px solid
+  position fixed
+  top topBarHeight
+  bottom 0
+  padding 0
+  margin 0
+  width 0
+  z-index 3
+  background white
+  transition width 200ms linear
+  overflow-x hidden
+  overflow-y auto
+  > ul
+    bottom: 0
+    padding: 0
+    margin: 0
 
-  > ul {
-    bottom: 0;
+.nav-item
+  height: topBarHeight     
+  list-style-type: none
+  line-height: topBarHeight
+  display: block
+  white-space: nowrap
+  padding 0
+  > a
     padding: 0;
-    margin: 0;
-  }
-
-  > ul > li{
-    height: topBarHeight     
-   list-style-type: none;
-   line-height: topBarHeight
     display: block;
-    white-space: nowrap;
-    > a{
-        padding: 0;
-        color: #333;
-        display: block;
-        width: 100%;
-        cursor: pointer;
-        height: 60px;
-        box-sizing: border-box;
-        border-bottom: #369 1px solid;
-        &:hover{
-          background: #369;
-          color: white;     
-        }
-      }
-  }
-}
+    width: 100%;
+    cursor: pointer;
+    height: 60px;
+    box-sizing: border-box;
+    border-bottom: #369 1px solid;
+    &::before
+      display: inline-block
+      line-height: topBarHeight
+      width: topBarHeight
+      text-align: center
+    &:hover
+      background: #369;
+      color: white;     
 
+
+
+//.menu-icon{
+// position: relative
+//  display: inline-block
+//  height: topBarHeight
+//  padding 0px;
+//  a
+//}
 
 .menu-button
   padding: 0px;
@@ -67,6 +75,9 @@
     width: topBarHeight
     @media mqTablet
       width: navFullWidth;
+
+.desktop .menu-button:hover + .navigation
+  width: topBarHeight
 
 .menu-button:focus + .navigation,
 .menu-button:active + .navigation,

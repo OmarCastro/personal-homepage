@@ -10,7 +10,7 @@
   width: 0;
   z-index: 3;
   background: #fff;
-  transition: width 150ms linear;
+  transition: width 200ms linear;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -19,16 +19,16 @@
   padding: 0;
   margin: 0;
 }
-.navigation > ul > li {
+.nav-item {
   height: 60px;
   list-style-type: none;
   line-height: 60px;
   display: block;
   white-space: nowrap;
-}
-.navigation > ul > li > a {
   padding: 0;
-  color: #333;
+}
+.nav-item > a {
+  padding: 0;
   display: block;
   width: 100%;
   cursor: pointer;
@@ -36,7 +36,13 @@
   box-sizing: border-box;
   border-bottom: #369 1px solid;
 }
-.navigation > ul > li > a:hover {
+.nav-item > a::before {
+  display: inline-block;
+  line-height: 60px;
+  width: 60px;
+  text-align: center;
+}
+.nav-item > a:hover {
   background: #369;
   color: #fff;
 }
@@ -67,6 +73,9 @@
   .menu-button:hover + .navigation {
     width: 12em;
   }
+}
+.desktop .menu-button:hover + .navigation {
+  width: 60px;
 }
 .menu-button:focus + .navigation,
 .menu-button:active + .navigation,
@@ -326,7 +335,7 @@
 }
 .logo-windows {
   background-color: #00adf1;
-  color: #eee;
+  color: #111;
 }
 .logo-unity::before {
   background-image: url("../icons/unity_icon.png");
@@ -382,18 +391,6 @@ html {
   color: #fff;
   background-color: #369;
 }
-.menu-icon {
-  position: relative;
-  display: inline-block;
-  height: 60px;
-  padding: 0px;
-}
-.menu-icon a:before {
-  display: inline-block;
-  line-height: 60px;
-  width: 60px;
-  text-align: center;
-}
 .top-bar {
   z-index: 2;
   padding: 0;
@@ -413,7 +410,6 @@ html {
 .top-bar a {
   color: #333;
   text-decoration: none;
-  padding: 0px 20px;
 }
 .topbar-buttons {
   float: right;
@@ -436,6 +432,7 @@ html {
   background: none;
   float: left;
   outline: none;
+  padding: 0px 20px;
 }
 .topbar-button:hover {
   color: #fff;
