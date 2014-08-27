@@ -1,5 +1,53 @@
 @require "variables";
 
+.top-bar
+  z-index: 2;
+  padding: 0
+  margin: 0
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  background: white;
+  font-size: 16px;
+  height: topBarHeight
+  line-height: topBarHeight
+  text-transform: uppercase;
+  border-bottom: #369 1px solid;
+  font-family: Open Sans;  
+
+
+
+.topbar-buttons
+  float right 
+  @media (max-width: 900px)
+    > .topbar-button:before
+      content: none;
+  @media (max-width: 720px)
+    display: none;
+
+.topbar-button
+  display: inline-block;
+  height: topBarHeight;
+  color: #555;
+  text-decoration: none;
+  text-decoration: none;
+  background: none;
+  float: left;
+  outline none
+  padding: 0px 20px;
+  &:hover
+     color: white;
+     background: #336699;
+  &:before
+    font-size: 20px;
+    margin-right: 0.5em; 
+
+.pagelink.active
+  color #47a 
+  &:hover
+   color white
+
 .navigation
   box-sizing border-box
   border-right #369 1px solid
@@ -15,44 +63,27 @@
   transition width 200ms linear
   overflow-x hidden
   overflow-y auto
-  > ul
-    bottom: 0
-    padding: 0
-    margin: 0
 
 .nav-item
-  height: topBarHeight     
-  list-style-type: none
-  line-height: topBarHeight
-  display: block
+  padding: 0;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  height: topBarHeight
+  text-decoration: none;
+  box-sizing: border-box;
   white-space: nowrap
-  padding 0
-  > a
-    padding: 0;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    height: 60px;
-    box-sizing: border-box;
-    border-bottom: #369 1px solid;
-    &::before
-      display: inline-block
-      line-height: topBarHeight
-      width: topBarHeight
-      text-align: center
-    &:hover
-      background: #369;
-      color: white;     
+  border-bottom: #369 1px solid;
+  color: #555;
+  &::before
+    display: inline-block
+    line-height: topBarHeight
+    width: topBarHeight
+    text-align: center
+  &:hover
+    background: #369;
+    color: white;     
 
-
-
-//.menu-icon{
-// position: relative
-//  display: inline-block
-//  height: topBarHeight
-//  padding 0px;
-//  a
-//}
 
 .menu-button
   padding: 0px;
@@ -82,7 +113,7 @@
 .menu-button:focus + .navigation,
 .menu-button:active + .navigation,
 .navigation:hover{
-  width: navFullWidth
+  width: navFullWidth !important
 }
 
 .navigation.hide:hover{

@@ -37,7 +37,7 @@ o.Class=n,"undefined"!=typeof module&&module.exports?module.exports=o:"function"
 var $ = document.querySelector.bind(document),
     $all = document.querySelectorAll.bind(document),
     nav = $(".navigation"),
-    pages = ["","about","skills","works","contact"],
+    pages = [".","about","skills","works","contact"],
     navHtml = nav.outerHTML,
     pageInfo = [];
 Element.prototype.on = function on(s, fn, val) {
@@ -77,7 +77,7 @@ pages.forEach(function(val){
 });
 
 function toPagelink(link){
-  var href = link.getAttribute("data-to");
+  var href = link.getAttribute("href");
   var info = pageInfo[pages.indexOf(href)];
   gotoPage(info)
   if(link.href != location.href){
@@ -91,7 +91,7 @@ function gotoPage(pageinfo){
   document.title = pageinfo.title;
   $(".page.current").outerHTML = pageinfo.pageHTML
   $(".pagelink.active").classList.remove("active");
-  $(".topbar-button.pagelink[data-to=\""+pageinfo.link+"\"]").classList.add("active");
+  $(".topbar-button.pagelink[href=\""+pageinfo.link+"\"]").classList.add("active");
   ga('send', 'pageview', {
     'page': '/' + pageinfo.link,
     'title': pageinfo.title

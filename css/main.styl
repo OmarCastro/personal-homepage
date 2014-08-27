@@ -22,71 +22,20 @@ body, html
     padding: 10px
     border: black 2px solid
 
-.indexlink{
-  margin: 1em;
-  color: #369;
-  text-align: center;
-  padding: 10px;
-  border: #369 2px solid;
-  display: block;
-  text-decoration: none;
-  font-family: "Open sans";
-  &:hover{
-    color: white;
-    background-color: #369;
-  }
-}
-
-//topbar start
-
-.top-bar
-  z-index: 2;
-  padding: 0
-  margin: 0
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  background: white;
-  font-size: 16px;
-  height: topBarHeight
-  line-height: topBarHeight
-  text-transform: uppercase;
-  border-bottom: #369 1px solid;
-  font-family: Open Sans;  
-  a
-    color: #333;
-    text-decoration: none;
-
-.topbar-buttons
-  float right 
-  @media (max-width: 900px)
-    > .topbar-button:before
-      content: none;
-  @media (max-width: 720px)
-    display: none;
-
-.topbar-button
-  display: inline-block;
-  height: topBarHeight;
-  color: #555;
-  text-decoration: none;
-  background: none;
-  float: left;
-  outline none
-  padding: 0px 20px;
+.indexlink
+  margin: 1em
+  color: #369
+  text-align: center
+  padding: 10px
+  border: #369 2px solid
+  display: block
+  text-decoration: none
+  font-family: "Open sans"
   &:hover
-     color: white;
-     background: #336699;
-  &:before
-    font-size: 20px;
-    margin-right: 0.5em; 
-.pagelink.active
-  color #47a 
-  &:hover
-   color white
+    color: white
+    background-color: #369
 
-//topbar end
+
 
 .swipe-notification
   position absolute
@@ -138,28 +87,24 @@ body, html
 * WORKS PAGE START
 */
 
-.work{
-  position: relative;
-  margin-bottom: 5em;
-}
+.work
+  position: relative
+  margin-bottom: 5em
 
-.work-description{
-  float: left;
-  display: inline-block;
-  max-width: 60%;   
-}
+.work-description
+  float: left
+  display: inline-block
+  max-width: 60%
 
-.work-canvas{
-  float: left;
-  display: inline-block;
-  max-width: 30%; 
-  margin: 0 5%;
-}
+.work-canvas
+  float: left
+  display: inline-block
+  max-width: 30%
+  margin: 0 5%
 
-.work-image{
-  border-radius: 3%;
-  width: 100%; 
-}
+.work-image
+  border-radius: 3%
+  width: 100%
 
 /*
 * WORKS PAGE END
@@ -180,8 +125,6 @@ body, html
   @media (orientation: portrait){
     flex-flow: column;
   }
-
-
 }
 
 

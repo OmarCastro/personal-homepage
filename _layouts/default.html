@@ -29,23 +29,21 @@
     </div>
     <div class="top-bar">
       <button class="topbar-button menu-button icon-menu"></button>
-        <div class="navigation">
-          <ul>
-          <li class="nav-item"><a class="pagelink icon-user" data-to="about" href="about">About</a></li>
-          <li class="nav-item"><a class="pagelink icon-signup" data-to="skills" href="skills">Skills</a></li>
-          <li class="nav-item"><a class="pagelink icon-library" data-to="works" href="works">Works</a></li>
-          <li class="nav-item"><a class="pagelink icon-address-book" data-to="contact" href="contact">Contact</a></li>
-          <li class="nav-item"><a class="nav-cv icon-profile" href="cv.pdf" target="_blank">CV</a></li>
-          </ul>
-        </div>
+      <div class="navigation">
+        <a class="nav-item pagelink icon-user" href="about">About</a>
+        <a class="nav-item pagelink icon-signup" href="skills">Skills</a>
+        <a class="nav-item pagelink icon-library" href="works">Works</a>
+        <a class="nav-item pagelink icon-address-book" href="contact">Contact</a>
+        <a class="nav-item nav-cv icon-profile" href="cv.pdf" target="_blank">CV</a>
+      </div>
 
-      <a class="topbar-button home-button pagelink{% if page.link == 'index' %} active{% endif %}" data-to="" data-pageindex="0" href=".">Omar Castro</a>
+      <a class="topbar-button home-button pagelink{% if page.link == 'index' %} active{% endif %}" data-pageindex="0" href=".">Omar Castro</a>
 
       <div class="topbar-buttons">
-        <a class="topbar-button button pagelink icon-user{% if page.link == 'about' %} active{% endif %}" data-to="about" href="about" data-pageindex="1">About</a>
-        <a class="topbar-button button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" data-to="skills" href="skills" data-pageindex="2">Skills</a>
-        <a class="topbar-button button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" data-to="works" href="works" data-pageindex="3">Works</a>
-        <a class="topbar-button button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" data-to="contact" href="contact" data-pageindex="4">Contact</a>
+        <a class="topbar-button pagelink icon-user{% if page.link == 'about' %} active{% endif %}" href="about" data-pageindex="1">About</a>
+        <a class="topbar-button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" href="skills" data-pageindex="2">Skills</a>
+        <a class="topbar-button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" href="works" data-pageindex="3">Works</a>
+        <a class="topbar-button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" href="contact" data-pageindex="4">Contact</a>
       </div> 
 
     </div>

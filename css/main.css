@@ -1,3 +1,57 @@
+.top-bar {
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  font-size: 16px;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  border-bottom: #369 1px solid;
+  font-family: Open Sans;
+}
+.topbar-buttons {
+  float: right;
+}
+@media (max-width: 900px) {
+  .topbar-buttons > .topbar-button:before {
+    content: none;
+  }
+}
+@media (max-width: 720px) {
+  .topbar-buttons {
+    display: none;
+  }
+}
+.topbar-button {
+  display: inline-block;
+  height: 60px;
+  color: #555;
+  text-decoration: none;
+  text-decoration: none;
+  background: none;
+  float: left;
+  outline: none;
+  padding: 0px 20px;
+}
+.topbar-button:hover {
+  color: #fff;
+  background: #369;
+}
+.topbar-button:before {
+  font-size: 20px;
+  margin-right: 0.5em;
+}
+.pagelink.active {
+  color: #47a;
+}
+.pagelink.active:hover {
+  color: #fff;
+}
 .navigation {
   box-sizing: border-box;
   border-right: #369 1px solid;
@@ -14,35 +68,25 @@
   overflow-x: hidden;
   overflow-y: auto;
 }
-.navigation > ul {
-  bottom: 0;
-  padding: 0;
-  margin: 0;
-}
 .nav-item {
-  height: 60px;
-  list-style-type: none;
-  line-height: 60px;
-  display: block;
-  white-space: nowrap;
-  padding: 0;
-}
-.nav-item > a {
   padding: 0;
   display: block;
   width: 100%;
   cursor: pointer;
   height: 60px;
+  text-decoration: none;
   box-sizing: border-box;
+  white-space: nowrap;
   border-bottom: #369 1px solid;
+  color: #555;
 }
-.nav-item > a::before {
+.nav-item::before {
   display: inline-block;
   line-height: 60px;
   width: 60px;
   text-align: center;
 }
-.nav-item > a:hover {
+.nav-item:hover {
   background: #369;
   color: #fff;
 }
@@ -80,7 +124,7 @@
 .menu-button:focus + .navigation,
 .menu-button:active + .navigation,
 .navigation:hover {
-  width: 12em;
+  width: 12em !important;
 }
 .navigation.hide:hover {
   width: 0;
@@ -307,7 +351,7 @@
 }
 .logo-angular {
   background-color: #33f;
-  color: #111;
+  color: #eee;
 }
 .logo-cpp::before {
   background-image: url("../icons/cpp-icon.png");
@@ -390,63 +434,6 @@ html {
 .indexlink:hover {
   color: #fff;
   background-color: #369;
-}
-.top-bar {
-  z-index: 2;
-  padding: 0;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  font-size: 16px;
-  height: 60px;
-  line-height: 60px;
-  text-transform: uppercase;
-  border-bottom: #369 1px solid;
-  font-family: Open Sans;
-}
-.top-bar a {
-  color: #333;
-  text-decoration: none;
-}
-.topbar-buttons {
-  float: right;
-}
-@media (max-width: 900px) {
-  .topbar-buttons > .topbar-button:before {
-    content: none;
-  }
-}
-@media (max-width: 720px) {
-  .topbar-buttons {
-    display: none;
-  }
-}
-.topbar-button {
-  display: inline-block;
-  height: 60px;
-  color: #555;
-  text-decoration: none;
-  background: none;
-  float: left;
-  outline: none;
-  padding: 0px 20px;
-}
-.topbar-button:hover {
-  color: #fff;
-  background: #369;
-}
-.topbar-button:before {
-  font-size: 20px;
-  margin-right: 0.5em;
-}
-.pagelink.active {
-  color: #47a;
-}
-.pagelink.active:hover {
-  color: #fff;
 }
 .swipe-notification {
   position: absolute;
