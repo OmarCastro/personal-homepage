@@ -4,15 +4,21 @@
 @require "skills.styl";
 
 
-:root{
-  margin-top 60px;
-}
-
 body, html
   margin: 0
   font-family: Quicksand
   overflow-x: hidden
   height: 100%
+
+body
+  padding-top 60px;
+  background-color #eee
+  color: #333
+
+
+#dark-theme:target
+  background-color #444
+  color: #ddd
 
 .title
   font-size: titlesize
@@ -20,7 +26,9 @@ body, html
   margin: 3em
   > span
     padding: 10px
-    border: black 2px solid
+    border-width 2px
+    border-style solid
+
 
 .indexlink
   margin: 1em
@@ -91,20 +99,32 @@ body, html
   position: relative
   margin-bottom: 5em
 
+.work:after, .clearfix:after
+  content: "";
+  display: table;
+  clear: both;
+
+
 .work-description
   float: left
   display: inline-block
-  max-width: 60%
+  > h2
+    margin-top 0
 
-.work-canvas
+.work-image
   float: left
   display: inline-block
+  border-radius: 3%
+  width: 100%
   max-width: 30%
   margin: 0 5%
 
-.work-image
-  border-radius: 3%
-  width: 100%
+.work:nth-child(2n) .work-image
+  float: right  
+  
+
+
+
 
 /*
 * WORKS PAGE END
@@ -173,10 +193,6 @@ body, html
 */
 
 
-
-.clearfloat{
-   clear: both; 
-}
 
 //mobile
 

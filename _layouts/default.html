@@ -21,7 +21,7 @@
         ga('send', 'pageview');
       </script>
   </head>
-  <body>
+  <body id="dark-theme">
     <div class="main content" touch-action="pan-y">
 
      {{ content }}
@@ -31,7 +31,7 @@
       <button class="topbar-button menu-button icon-menu"></button>
       <div class="navigation">
         <a class="nav-item pagelink icon-user" href="about">About</a>
-        <a class="nav-item pagelink icon-signup" href="skills">Skills</a>
+        <!--a class="nav-item pagelink icon-signup" href="skills">Skills</a-->
         <a class="nav-item pagelink icon-library" href="works">Works</a>
         <a class="nav-item pagelink icon-address-book" href="contact">Contact</a>
         <a class="nav-item nav-cv icon-profile" href="cv.pdf" target="_blank">CV</a>
@@ -41,7 +41,7 @@
 
       <div class="topbar-buttons">
         <a class="topbar-button pagelink icon-user{% if page.link == 'about' %} active{% endif %}" href="about" data-pageindex="1">About</a>
-        <a class="topbar-button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" href="skills" data-pageindex="2">Skills</a>
+        <!--a class="topbar-button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" href="skills" data-pageindex="2">Skills</a-->
         <a class="topbar-button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" href="works" data-pageindex="3">Works</a>
         <a class="topbar-button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" href="contact" data-pageindex="4">Contact</a>
       </div> 

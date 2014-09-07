@@ -6,13 +6,16 @@
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
+  background-color: inherit;
   font-size: 16px;
   height: 60px;
   line-height: 60px;
   text-transform: uppercase;
   border-bottom: #369 1px solid;
   font-family: Open Sans;
+}
+#dt:target > .top-bar {
+  border-color: #9ad;
 }
 .topbar-buttons {
   float: right;
@@ -30,8 +33,7 @@
 .topbar-button {
   display: inline-block;
   height: 60px;
-  color: #555;
-  text-decoration: none;
+  color: inherit;
   text-decoration: none;
   background: none;
   float: left;
@@ -56,6 +58,7 @@
   box-sizing: border-box;
   border-right: #369 1px solid;
   border-top: #369 1px solid;
+  border-color: inherit;
   position: fixed;
   top: 60px;
   bottom: 0;
@@ -63,7 +66,7 @@
   margin: 0;
   width: 0;
   z-index: 3;
-  background: #fff;
+  background-color: inherit;
   transition: width 200ms linear;
   overflow-x: hidden;
   overflow-y: auto;
@@ -78,7 +81,8 @@
   box-sizing: border-box;
   white-space: nowrap;
   border-bottom: #369 1px solid;
-  color: #555;
+  border-color: inherit;
+  color: inherit;
 }
 .nav-item::before {
   display: inline-block;
@@ -402,15 +406,21 @@
   background-color: #eee;
   color: #111;
 }
-:root {
-  margin-top: 60px;
-}
 body,
 html {
   margin: 0;
   font-family: Quicksand;
   overflow-x: hidden;
   height: 100%;
+}
+body {
+  padding-top: 60px;
+  background-color: #eee;
+  color: #333;
+}
+#dark-theme:target {
+  background-color: #444;
+  color: #ddd;
 }
 .title {
   font-size: 20px;
@@ -419,7 +429,8 @@ html {
 }
 .title > span {
   padding: 10px;
-  border: #000 2px solid;
+  border-width: 2px;
+  border-style: solid;
 }
 .indexlink {
   margin: 1em;
@@ -490,20 +501,29 @@ html {
   position: relative;
   margin-bottom: 5em;
 }
+.work:after,
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .work-description {
   float: left;
   display: inline-block;
-  max-width: 60%;
 }
-.work-canvas {
+.work-description > h2 {
+  margin-top: 0;
+}
+.work-image {
   float: left;
   display: inline-block;
+  border-radius: 3%;
+  width: 100%;
   max-width: 30%;
   margin: 0 5%;
 }
-.work-image {
-  border-radius: 3%;
-  width: 100%;
+.work:nth-child(2n) .work-image {
+  float: right;
 }
 /*
 * WORKS PAGE END
@@ -560,9 +580,6 @@ html {
 /*
 *  CONTACT PAGE END
 */
-.clearfloat {
-  clear: both;
-}
 body.phone .contact-info,
 body.phone .qr-contact {
   min-width: 100%;
