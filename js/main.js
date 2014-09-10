@@ -37,7 +37,7 @@ o.Class=n,"undefined"!=typeof module&&module.exports?module.exports=o:"function"
 var $ = document.querySelector.bind(document),
     $all = document.querySelectorAll.bind(document),
     nav = $(".navigation"),
-    pages = [".","about","skills","works","contact"],
+    pages = [".","about","works","contact"],
     navHtml = nav.outerHTML,
     pageInfo = [];
 Element.prototype.on = function on(s, fn, val) {
