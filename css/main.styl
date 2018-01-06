@@ -14,6 +14,11 @@ body, html
   overflow-x: hidden
   height: 100%
 
+
+.dark-theme
+  background-color #111;
+  color: #ddd
+
 .title
   font-size: titlesize
   text-align: center
@@ -239,20 +244,29 @@ body.phone
 .main-introduction{
   position: relative;
   height: 100%; 
-  background-image: url("../imgs/background.jpg");
+  background-image: url("../imgs/background.png");
   background-size: cover;
   background-position: center;
+  text-align: right;
+  > .photo {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    border-radius: 50%;
+  }
+  
   > h1 {
     position: absolute;
     bottom: 2em;
-    right: 2em;
+    right: 2rem;
     color: white;
   }
 
   > h3 {
     position: absolute;
     bottom: 1em;
-    right: 2em;
+    right: 2rem;
     color: white;
   }
 }
