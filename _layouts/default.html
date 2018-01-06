@@ -11,17 +11,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-51662040-2', 'auto');
-        ga('send', 'pageview');
-      </script>
   </head>
-  <body>
+  <body id="dark-theme">
     <div class="main content" touch-action="pan-y">
 
      {{ content }}
@@ -31,7 +22,7 @@
       <button class="topbar-button menu-button icon-menu"></button>
       <div class="navigation">
         <a class="nav-item pagelink icon-user" href="about">About</a>
-        <a class="nav-item pagelink icon-signup" href="skills">Skills</a>
+        <!--a class="nav-item pagelink icon-signup" href="skills">Skills</a-->
         <a class="nav-item pagelink icon-library" href="works">Works</a>
         <a class="nav-item pagelink icon-address-book" href="contact">Contact</a>
         <a class="nav-item nav-cv icon-profile" href="cv.pdf" target="_blank">CV</a>
@@ -41,9 +32,9 @@
 
       <div class="topbar-buttons">
         <a class="topbar-button pagelink icon-user{% if page.link == 'about' %} active{% endif %}" href="about" data-pageindex="1">About</a>
-        <a class="topbar-button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" href="skills" data-pageindex="2">Skills</a>
-        <a class="topbar-button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" href="works" data-pageindex="3">Works</a>
-        <a class="topbar-button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" href="contact" data-pageindex="4">Contact</a>
+        <!--a class="topbar-button pagelink icon-signup{% if page.link == 'skills' %} active{% endif %}" href="skills" data-pageindex="2">Skills</a-->
+        <a class="topbar-button pagelink icon-library{% if page.link == 'works' %} active{% endif %}" href="works" data-pageindex="2">Works</a>
+        <a class="topbar-button pagelink icon-address-book{% if page.link == 'contact' %} active{% endif %}" href="contact" data-pageindex="3">Contact</a>
       </div> 
 
     </div>

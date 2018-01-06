@@ -1,0 +1,116 @@
+@require "variables";
+
+sklist(num)
+  @media screen and (min-width: (boxsize*num+4*contentmargin))
+    width: (boxsize+2*boxmargin)*num;
+
+
+
+
+.intro
+  text-align: center;
+  margin: 2em;
+
+.skill-list{
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  sklist 1
+  sklist 2
+  sklist 3
+  sklist 4
+  sklist 5
+  sklist 6
+  sklist 7
+}
+
+
+
+.box{
+	position: relative;
+  display: inline-block;
+	width: boxsize;
+	height: boxsize;
+	margin: boxmargin 0;
+	background: #442277;
+	color: white;
+	overflow: hidden;
+	text-align: center;
+  padding: 0px;
+  font-size: @boxsize/8;
+  font-family: Quicksand;
+  line-height: @boxsize;
+  vertical-align: middle;
+    
+  
+  
+  &::before, > i{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      content: "";
+      vertical-align: middle;
+      text-align: center;
+      font-family: Quicksand;
+      line-height: initial;
+      transition: all 0.25s cubic-bezier(0.8, 0, 0.2, 1);
+  }
+  
+  > i{
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+  }
+  
+  &::before{
+    transform: scale(1);
+    opacity: 1;
+    height: 100%;
+  }
+  
+  &:hover::before{
+    transform: scale(2);
+    opacity: 0;
+
+  }
+  
+  &:hover > i{
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+
+  }
+}
+
+.logo::before{
+	background-size: 50%;
+	background-position: center; 
+	background-repeat: no-repeat;
+}
+
+.logo::after{
+  white-space:pre-line;
+}
+
+tolight(color,dc, wc)
+  background-color color
+  if contrast(color,dc).ratio > contrast(color,wc).ratio
+    color dc
+  else
+    color wc
+
+skill(mySelector, url, color = #eee){
+  .{"logo-"+mySelector}::before{background-image: url(icons+url); }
+  .{"logo-"+mySelector}{
+    tolight(color,#111,#eee)
+  }
+}
+
+skill(js,"js-logo.png", #323330);
+skill(angular,"angular.png", #33f);
+skill(cpp,"cpp-icon.png", black);
+skill(sails,"sails.png", #eee);
+skill(docker,"docker.png",#70AFC1);
+skill(windows,"windows.png",#00ADF1);
+skill(unity,"unity_icon.png");
+skill(html,"html5css3.png");
+skill(dart,"dart-logo.png");
