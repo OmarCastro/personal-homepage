@@ -1,24 +1,157 @@
----
-layout: default
-title: Contact Information
----
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script defer src="js/isMobile.js"></script>
+      <script async src="js/page.component.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/index-new.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  </head>
+  <body>
+    <div class="main content">
+      
+      <div class="page" is="home-page-section" id="contact">
+        <div class="contact">
+      
+          <div class="contact-box">
+            <div class="title"><span>Contact</span></div>
+            <div class="contact-info">
+              <i class="icon-user"></i> Omar Castro<br>
+              <i class="icon-envelope"></i> omar.castro.360&#64;gmail.com	<br>
+              <i class="icon-phone"></i> +351914578611	<br>    
+              <i class="icon-globe"></i> <a href="http://omarcastro.name/">http://omarcastro.name/</a>	
+            </div>
+            <div class="title"><span>Social networks</span></div>
+            <div class="social-icons">
+              <a class="social-icon" href="https://github.com/OmarCastro"><i class="icon-github"></i></a>	
+              <a class="social-icon" href="http://www.linkedin.com/pub/omar-castro/6a/221/aab"><i class="icon-linkedin"></i></a>	
+            </div>
+          </div>
+          <div class="qr-contact">
+            <img src="imgs/qr-contact.svg">
+            <div>Want to save into your phone contacts?<br> You can do it scanning this QR code</div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="page" is="home-page-section" id="skills">
+        <div class="title"><span>Skills</span></div>
+      <div class="intro">
+        This section presents an overview of my skills
+      </div>
+      
+      
+      <div class="skill-list">
+        <div class="skill box logo logo-html"><i>Web development</i></div>
+        <div class="skill box logo logo-js"><i>Javascript</i></div>
+        <div class="skill box logo logo-angular"><i>Angular</i></div>
+        <div class="skill box logo logo-react"><i>React</i></div>
+        <div class="skill box logo logo-sails"><i>sails</i></div>
+        <div class="skill box logo logo-docker"><i>Docker</i></div>
+        </div>
+      </div>
 
 
-<div class="page current main-page" data-page="main">
-  <div class="main-introduction">
-  <h1>Omar Castro, Home page</h1>
-  <div class="swipe-notification">Swipe to change page</div>
-  </div>
-  <div class="text profile-text">
-    <i>Omar Alejandro Castillo de Castro</i>, born in Santo Domingo, Dominican Repubic, is an engineer graduated from
-    the Faculty of Engineering of University of Porto (FEUP) in the master's degree of Informatics and Computing.
-    A creative, hard-working, adaptable, caring and responsible person. He likes traveling (not alone) and have a fit body.
-    He has interest in software management, FullStack Web engineering, robotics, UX.
-  </div>
-    
-    
-    
-</div>
+    <div class="page" is="home-page-section" id="works">
+      <div class="title"><span>Works</span></div>
+      
+      <div class="work-list">		  
+        <div class="work">
+          <div class="work-canvas"><img class="work-image" src="imgs/portfolio02.jpg" alt=""></div>
+          <div class="work-description">
+          <h2>Paragon</h2>
+          A responsive web application developed jointly with Altran Portugal. 
+          It consists of a platform for the creation, discussion and maturation of business ideas.
+          </div>
+          <div class="clearfloat"></div>
+        </div>
+      
+        <div class="work">
+          <div class="work-description">
+          <h2>Cat and Mouse</h2>
+          A robotic game project based on the CiberRato Robot Simulation Environment, in which simulates the movement of robots inside a labyrinth. There are 2 types of robots, the cats and the mice, the cats objective is to catch the mouse and the mouse is to avoid getting caught in the labyrinth. The game can also be played unsing a device with gyroscpe and internet as a controller.
+          </div>
+          <div class="work-canvas"><img class="work-image" src="imgs/cat-and-mouse.png" alt=""></div>
+          <div class="clearfloat"></div>
+        </div>
+      
+      <div class="work">
+      
+        <div class="work-canvas"><img class="work-image" src="imgs/ARFS.jpg" alt=""></div>
+        <div class="work-description">
+          <h2>AR Fruit Samurai</h2>
+      
+          A game based on augmented reality where you cut virtual fruits with that come from a basket, a virtual sword, which in reality is made of paper, unfortunately, to enjoy the game you had to have a high frame-rate camera, because you may pass a fruit without cutting it due to sheer swing speed and a low framerate camera, I played with a smartphone camera, so I know how it feels.
+          </div>
+          <div class="clearfloat"></div>
+        </div>  
+      <div class="work">
+      <div class="work-description">
+          <h2>Third person asteroid</h2>
+      
+          An challenging variant of an asteroid game. It is challenging because the world rotates around the ship instead the ship rotating in the world. The rules to win are simple, destroy the surrounding asteroids while surviving against invading enemy alien ships with better accurancy than a sniper. You can play the game <a target="_blank" href="http://paginas.fe.up.pt/~ei08158/4ano/djco/asteroids/">here.</a>
+          </div>
+          <div class="work-canvas"><img class="work-image" src="imgs/fpasteroids.jpg" alt=""></div>
+      
+          <div class="clearfloat"></div>
+        </div>  
+      
+      
+      
+        </div>
+      </div>
 
-		
-		
+      <div class="page" is="home-page-section" id="about">
+        <div class="profile">
+          <div class="round image profile-canvas">
+            <img class="profile-image" src="imgs/me.jpg" alt="Photo of the Omar Alejandro Castillo de Castro">
+          </div>
+          <div class="text profile-text">
+            <i>Omar Alejandro Castillo de Castro</i>, born in Santo Domingo, Dominican Repubic, is an engineer graduated from
+            the Faculty of Engineering of University of Porto (FEUP) in the master's degree of Informatics and Computing.
+            A creative, hard-working, adaptable, caring and responsible person. He likes traveling (not alone) and have a fit body.
+            He has interest in software management, FullStack Web engineering, robotics, UX.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="page page--main" is="home-page-section">
+        <div class="main-introduction">
+        <h1>Omar Castro, Home page (08/08/22: Updating homepage)</h1>
+        <div class="swipe-notification">Swipe to change page</div>
+        </div>
+        <div class="text profile-text">
+          <i>Omar Alejandro Castillo de Castro</i>, born in Santo Domingo, Dominican Repubic, is an engineer graduated from
+          the Faculty of Engineering of University of Porto (FEUP) in the master's degree of Informatics and Computing.
+          A creative, hard-working, adaptable, caring and responsible person. He likes traveling (not alone) and have a fit body.
+          He has interest in software management, FullStack Web engineering, robotics, UX.
+        </div>
+    </div>
+      
+    </div>
+    <div class="top-bar">
+      <button class="topbar-button menu-button icon-menu"></button>
+      <div class="navigation">
+        <ul>
+        <li class="nav-item menu-icon"><a class="icon-user" href="#about">About</a></li>
+        <li class="nav-item menu-icon"><a class="icon-signup" href="#skills">Skills</a></li>
+        <li class="nav-item menu-icon"><a class="icon-library" href="#works">Works</a></li>
+        <li class="nav-item menu-icon"><a class="icon-address-book" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <a class="topbar-button home-button pagelink-main" href=".">Omar Castro</a>
+
+      <div class="topbar-buttons">
+        <a class="topbar-button button pagelink-about icon-user" href="#about">About</a>
+        <a class="topbar-button button pagelink-skills icon-signup" href="#skills">Skills</a>
+        <a class="topbar-button button pagelink-works icon-library" href="#works">Works</a>
+        <a class="topbar-button button pagelink-contact icon-address-book" href="#contact">Contact</a>
+      </div> 
+      </div>
+
+      
+
+  </body>
+</html>
