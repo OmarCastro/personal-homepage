@@ -43,13 +43,59 @@
 
 /* TOP BAR */
 
+.top-bar {
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  font-size: 16px;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  border-bottom: #369 1px solid;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topbar-buttons {
+  float: right;
+}
+
+.topbar-button {
+  display: inline-block;
+  height: 60px;
+  text-decoration: none;
+  background: none;
+  padding: 0px 20px;
+}
+
+.topbar-button:before {
+  font-size: 20px;
+  margin-right: 0.5em;
+}
+
+@media (max-width: 900px) { 
+  /* hide navigation icons on small enough hoziontal space */
+  .topbar-buttons > .topbar-button:before {
+    content: none;
+  }
+}
+
+@media (max-width: 720px) { 
+  /* on even smaller screen, hide top menu buttons on right side altogether */
+  .topbar-buttons {
+    display: none;
+  }
+}
 
 
 /* TOP BAR VERTICAL NAVIGATION */
 
 .navigation {
   box-sizing: border-box;
-  border-right: #369 1px solid;
   position: fixed;
   top: 61px;
   bottom: 0;
@@ -91,8 +137,6 @@
 
 .navigation__link:before {
   display: inline-block;
-  top: 0;
-  left: 0;
   line-height: 60px;
   width: 60px;
   text-align: center;
@@ -106,7 +150,13 @@
 
 
 .menu-button:hover ~ .navigation {
+  border-right: #369 1px solid;
   width: 60px;
+}
+.navigation:hover,
+.menu-button:focus ~ .navigation {
+  border-right: #369 1px solid;
+  width: 15em;
 }
 @media screen and (max-device-width: 1028px) {
   .menu-button:hover ~ .navigation {
@@ -123,7 +173,8 @@
 
 
 /* NAVIGATION STATES */
-.navigation__link:hover,
+:is(.navigation__link, .topbar-button):hover,
+:is(.navigation__link, .topbar-button):focus,
 .page--about:target ~ .top-bar :is(.navigation__link--about, .pagelink-about),
 .page--skills:target ~ .top-bar :is(.navigation__link--skills, .pagelink-skills),
 .page--works:target ~ .top-bar :is(.navigation__link--works, .pagelink-works),
@@ -156,35 +207,8 @@ html {
   border: black 2px solid;
 }
 
-.top-bar {
-  z-index: 2;
-  padding: 0;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  font-size: 16px;
-  height: 60px;
-  line-height: 60px;
-  text-transform: uppercase;
-  border-bottom: #369 1px solid;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.topbar-button {
-  color: #333;
-  text-decoration: none;
-  padding: 0px 20px;
-}
-.topbar-buttons {
-  float: right;
-}
-@media (max-width: 720px) {
-  .topbar-buttons {
-    display: none;
-  }
-}
+
+
 .menu-button {
   padding: 0px;
   width: 60px;
@@ -199,37 +223,7 @@ html {
 }
 
 
-.topbar-button {
-  display: inline-block;
-  height: 60px;
-  color: #555;
-  text-decoration: none;
-  background: none;
-  float: left;
-}
-.topbar-button:hover {
-  color: white;
-  background: #336699;
-}
-.topbar-button:before {
-  font-size: 20px;
-  margin-right: 0.5em;
-}
-.topbar-button:focus {
-  color: white;
-  background: #336699;
-}
-.pagelink-active {
-  color: #47a;
-}
-.pagelink-active:hover {
-  color: white;
-}
-@media (max-width: 900px) {
-  .topbar-buttons > .topbar-button:before {
-    content: none;
-  }
-}
+
 .content {
   position: fixed;
   top: 60px;
