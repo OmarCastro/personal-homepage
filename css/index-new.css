@@ -82,14 +82,14 @@
   border-bottom: #369 1px solid;
 }
 
-.menu-icon {
+.navigation__link {
   position: relative;
   display: inline-block;
   height: 60px;
   padding: 0px;
 }
 
-.menu-icon:before {
+.navigation__link:before {
   display: inline-block;
   top: 0;
   left: 0;
@@ -103,6 +103,13 @@
   color: #333;
   text-decoration: none;
 }
+
+
+/* NAVIGATION ICONS */
+:is(.navigation__link--about, .pagelink-about)::before{ content: "🗿"; }
+:is(.navigation__link--works, .pagelink-works)::before{ content: "🏯"; }
+:is(.navigation__link--skills, .pagelink-skills)::before{ content: "📋"; }
+:is(.navigation__link--contact, .pagelink-contact)::before{ content: "📬"; }
 
 
 /* NAVIGATION STATES */
