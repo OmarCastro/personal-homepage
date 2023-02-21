@@ -31,8 +31,8 @@ function gotoPreviousPage(){
   newId == null ? navigateToMainPage() : location.hash = newId;
 };
 
-document.addEventListener('keydown', () => {
-  switch(e.key){
+document.addEventListener('keydown', ({key}) => {
+  switch(key){
     case "ArrowLeft": gotoPreviousPage(); break
     case "ArrowRight": gotoNextPage(); break
   }
@@ -60,6 +60,6 @@ document.addEventListener('touchstart', e => {
 document.addEventListener('click', e => {
   if(e.target.closest('.home-button')){
     e.preventDefault()
-    history.pushState('', document.title, window.location.pathname)
+    navigateToMainPage()
   }
 })
