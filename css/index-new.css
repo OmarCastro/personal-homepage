@@ -1,23 +1,19 @@
 
 
-.page::after {
+/* PAGE STYLES */
 
+.page::after {
   content: " ";
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-
   pointer-events: none;
   z-index: -2;
   --bg-color: rgb(163, 0, 0);
-
-
   background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%), rgb(243, 243, 243);
 }
-
-
 
 .page {
   height: 100%;
@@ -27,6 +23,7 @@
   box-sizing: border-box;
   display: none;
 }
+
 .swipe-notification {
   position: absolute;
   bottom: 0;
@@ -43,6 +40,11 @@
   transform: none;
   display: block;
 }
+
+
+
+/* TOP BAR */
+
 
 
 
@@ -144,7 +146,7 @@ html {
   line-height: 60px;
   text-transform: uppercase;
   border-bottom: #369 1px solid;
-  font-family: Open Sans;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .top-bar a {
   color: #333;
