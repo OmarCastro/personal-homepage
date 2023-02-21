@@ -2,7 +2,8 @@
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
-  src: local('Quicksand Regular'), local('Quicksand-Regular'), url(http://fonts.gstatic.com/s/quicksand/v4/sKd0EMYPAh5PYCRKSryvW1tXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/quicksand/v4/sKd0EMYPAh5PYCRKSryvWz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+  src: local('Quicksand Regular'), 
+  local('Quicksand-Regular'), url('../fonts/quicksand/Quicksand-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -14,11 +15,11 @@
 
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?ouzfz6');
-	src:url('../fonts/icomoon.eot?#iefixouzfz6') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?ouzfz6') format('woff'),
-		url('../fonts/icomoon.ttf?ouzfz6') format('truetype'),
-		url('../fonts/icomoon.svg?ouzfz6#icomoon') format('svg');
+	src:url('../fonts/icomoon/icomoon.eot?ouzfz6');
+	src:url('../fonts/icomoon/icomoon.eot?#iefixouzfz6') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff?ouzfz6') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf?ouzfz6') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg?ouzfz6#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
