@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <script defer src="js/isMobile.js"></script>
-      <script async src="js/page.component.js"></script>
-      <link rel="stylesheet" type="text/css" href="css/index-new.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>Omar Castro Homepage</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script defer src="js/isMobile.js"></script>
+    <script async src="js/page.component.js"></script>
+    <script async src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index-new.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
   </head>
   <body>
     <div class="main content">
       
-      <div class="page" is="home-page-section" id="contact">
+      <div class="page page--contact" is="home-page-section" id="/contact">
         <div class="contact">
       
           <div class="contact-box">
@@ -35,7 +37,7 @@
       </div>
       
 
-      <div class="page" is="home-page-section" id="skills">
+      <div class="page page--skills" is="home-page-section" id="/skills">
         <div class="title"><span>Skills</span></div>
         <div class="intro">
           This section presents an overview of my skills
@@ -59,7 +61,7 @@
     </div>
 
 
-    <div class="page" is="home-page-section" id="works">
+    <div class="page page--works" is="home-page-section" id="/works">
       <div class="title"><span>Works</span></div>
       
       <div class="work-list">		  
@@ -119,7 +121,7 @@
         </div>
       </div>
 
-      <div class="page" is="home-page-section" id="about">
+      <div class="page page--about" is="home-page-section" id="/about">
         <div class="profile">
           <div class="round image profile-canvas">
             <img class="profile-image" src="imgs/me.jpg" alt="Photo of the Omar Alejandro Castillo de Castro">
@@ -149,22 +151,22 @@
       
     </div>
     <div class="top-bar">
-      <button class="topbar-button menu-button icon-menu"></button>
+      <button class="topbar-button menu-button icon-menu" title="menu"></button>
       <div class="navigation">
         <ul>
-        <li class="nav-item menu-icon"><a class="icon-user" href="#about">About</a></li>
-        <li class="nav-item menu-icon"><a class="icon-signup" href="#skills">Skills</a></li>
-        <li class="nav-item menu-icon"><a class="icon-library" href="#works">Works</a></li>
-        <li class="nav-item menu-icon"><a class="icon-address-book" href="#contact">Contact</a></li>
+        <li class="nav-item menu-icon"><a class="icon-user" href="#/about">About</a></li>
+        <li class="nav-item menu-icon"><a class="icon-signup" href="#/skills">Skills</a></li>
+        <li class="nav-item menu-icon"><a class="icon-library" href="#/works">Works</a></li>
+        <li class="nav-item menu-icon"><a class="icon-address-book" href="#/contact">Contact</a></li>
         </ul>
       </div>
       <a class="topbar-button home-button pagelink-main" href=".">Omar Castro</a>
 
       <div class="topbar-buttons">
-        <a class="topbar-button button pagelink-about icon-user" href="#about">About</a>
-        <a class="topbar-button button pagelink-skills icon-signup" href="#skills">Skills</a>
-        <a class="topbar-button button pagelink-works icon-library" href="#works">Works</a>
-        <a class="topbar-button button pagelink-contact icon-address-book" href="#contact">Contact</a>
+        <a class="topbar-button button pagelink-about icon-user" href="#/about">About</a>
+        <a class="topbar-button button pagelink-skills icon-signup" href="#/skills">Skills</a>
+        <a class="topbar-button button pagelink-works icon-library" href="#/works">Works</a>
+        <a class="topbar-button button pagelink-contact icon-address-book" href="#/contact">Contact</a>
       </div> 
       </div>
 
