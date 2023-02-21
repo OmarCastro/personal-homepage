@@ -11,13 +11,18 @@ function format(literals, ...substitutions) {
     return result;
 }
 
-const css = format 
+function css (literals, ...substitutions) {
+    const cssText = format(literals, ...substitutions)
+    const styleSheet = new CSSStyleSheet()
+    styleSheet.replaceSync(cssText)
+    return styleSheet
+}
 const html = format 
 
-const cssText = css`
+const cssStyleSheet = css`
 .page-bg {
     display: inline-block;
-    --dot-color: rgb(150, 150, 150);
+    --dot-color: #ccc;
     background: radial-gradient(circle, var(--dot-color), transparent 2px);
     background-size: 22px 22px;
     background-position: -10px -10px;
@@ -29,17 +34,13 @@ const cssText = css`
   }
 `
 
-const htmlContent = html`
-<style>
-    ${cssText}
-</style>
-<span class="page-bg"><slot></slot></span>
-`
+const htmlContent = html`<span class="page-bg"><slot></slot></span>`
 
 class HomepageSection extends HTMLDivElement {
     constructor(){
         super();
         const shadowDom = this.attachShadow({mode: "open"});
+        shadowDom.adoptedStyleSheets = [cssStyleSheet]
         shadowDom.innerHTML = htmlContent
     }
 }
