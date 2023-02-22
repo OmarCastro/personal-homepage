@@ -58,10 +58,13 @@
   text-transform: uppercase;
   border-bottom: #369 1px solid;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
 }
 
 .topbar-buttons {
-  float: right;
+  display: flex;
+  flex:1;
+  justify-content: flex-end;
 }
 
 .topbar-button {
