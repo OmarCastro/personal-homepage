@@ -187,7 +187,63 @@
   color: white;
 }
 
+/* TOP LEFT MENU BUTTON */
+.menu-button {
+  padding: 0px;
+  width: 60px;
+  border: none;
+  outline: none;
+}
 
+.menu-button:before {
+  text-align: center;
+  width: 100%;
+  display: block;
+  line-height: 60px;
+}
+
+/* CONTENT */
+
+.main-content {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+
+
+@media only screen and (max-device-width: 670px) and (orientation: landscape){
+  .top-bar {
+    height: 0;
+    border: none;
+  }
+
+  .home-button {
+    display: none;
+  }
+
+  .menu-button {
+    background-color: white;
+    border-right: #369 1px solid;
+    border-bottom: #369 1px solid;
+    box-sizing: content-box;
+  }
+
+  .navigation {
+    box-sizing: content-box;
+    width: 60px;
+    border-top: #369 1px solid;
+    border-right: #369 1px solid;
+  }
+
+  .main-content {
+    top: 0;
+    left: 60px;
+  }
+}
 
 
 
@@ -210,31 +266,6 @@ html {
   border: black 2px solid;
 }
 
-
-
-.menu-button {
-  padding: 0px;
-  width: 60px;
-  border: none;
-  outline: none;
-}
-.menu-button:before {
-  text-align: center;
-  width: 100%;
-  display: block;
-  line-height: 60px;
-}
-
-
-
-.content {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
 
 .swipe-notification {
   position: absolute;
