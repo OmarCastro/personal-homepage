@@ -221,7 +221,7 @@
     border: none;
   }
 
-  .home-button {
+  .home-button, .topbar-buttons {
     display: none;
   }
 
