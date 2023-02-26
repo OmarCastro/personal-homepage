@@ -6,8 +6,13 @@
     <script defer src="js/isMobile.js"></script>
     <script async src="js/page.component.js"></script>
     <script async src="js/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/index-new.css">
+    <link rel="preload" href="css/index-new.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/index-new.css"></noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+      .page { height: 100%; overflow-y: auto; position: absolute; width: 100%; box-sizing: border-box; display: none; }
+      .page:target ~ .page--main { display: none;}
+      .page:target, .page--main { transform: none; display: block; }</style>
   </head>
   <body>
     <div class="main-content">
