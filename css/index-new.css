@@ -504,6 +504,16 @@ html {
   justify-content: space-around;
   flex-flow: wrap;
 }
+
+
+.contact td:nth-child(1) {
+  text-align: right; font-weight: bold;
+}
+
+.contact td:nth-child(2) {
+  text-align: left
+}
+
 @media (orientation: portrait) {
   .contact {
     flex-flow: column;
