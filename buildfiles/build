@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cd "$SCRIPT_DIR"/..
+
+# clean
+rm -rf build
+
+# build dist & doumentation
+mkdir -p build/css build/js build/js build/imgs build/icons 
+
+cp -R css/* build/css
+cp -R js/* build/js
+cp -R imgs/* build/imgs
+cp -R icons/* build/icons
+buildfiles/minify-html > build/index.html

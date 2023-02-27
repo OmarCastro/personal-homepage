@@ -3,4 +3,4 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd "$SCRIPT_DIR"/..
 
-deno --allow-read buildfiles/minify-html.js
+deno run --allow-read buildfiles/scripts/minify-html.ts
