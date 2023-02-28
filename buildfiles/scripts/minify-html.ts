@@ -36,10 +36,15 @@ doc.querySelectorAll('link[rel="stylesheet"][href][ss:inline]').forEach(node => 
   }
 })
 
-
-console.log(minifyHTML(doc.documentElement!.outerHTML, {
+const minifiedHtml = minifyHTML(doc.documentElement!.outerHTML, {
   minifyCSS: true,
   minifyJS: true
-}));
+})
+
+if(!minifiedHtml.startsWith("<!")){
+  console.log('<!DOCTYPE html>');
+}
+console.log(minifiedHtml);
+
 
   
