@@ -15,6 +15,15 @@
     display: none;
 }
 
+.page::after {
+    content: " ";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%), rgb(243, 243, 243);
+  }
+
 .page:target ~ .page--main { 
     display: none;
 }
@@ -22,3 +31,59 @@
     transform: none; 
     display: block; 
 }
+
+/* NAVIGATION ICONS */
+:is(.navigation__link--about, .pagelink-about)::before{ content: "🗿"; }
+:is(.navigation__link--works, .pagelink-works)::before{ content: "🏯"; }
+:is(.navigation__link--skills, .pagelink-skills)::before{ content: "📋"; }
+:is(.navigation__link--contact, .pagelink-contact)::before{ content: "📬"; }
+
+
+/* NAVIGATION STATES */
+:is(.navigation__link, .topbar-button):hover,
+:is(.navigation__link, .topbar-button):focus,
+.page--about:target ~ .top-bar :is(.navigation__link--about, .pagelink-about),
+.page--skills:target ~ .top-bar :is(.navigation__link--skills, .pagelink-skills),
+.page--works:target ~ .top-bar :is(.navigation__link--works, .pagelink-works),
+.page--contact:target ~ .top-bar :is(.navigation__link--contact, .pagelink-contact)
+{
+  background: #369;
+  color: white;
+}
+
+/* TOP BAR */
+
+.top-bar {
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    inset: 0 0 auto 0;
+    background: white;
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    border-bottom: #369 1px solid;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+  }
+  
+  .topbar-buttons {
+    display: flex;
+    flex:1;
+    justify-content: flex-end;
+  }
+  
+  .topbar-button {
+    display: inline-block;
+    height: 60px;
+    text-decoration: none;
+    background: none;
+    padding: 0px 20px;
+  }
+  
+  .topbar-button:before {
+    font-size: 20px;
+    margin-right: 0.5em;
+  }
