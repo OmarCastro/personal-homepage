@@ -21,6 +21,22 @@ doc.querySelectorAll('link[rel="stylesheet"][href][ss:defer]').forEach(node => {
   }
 })
 
+doc.querySelectorAll('link[rel="stylesheet"][href][ss:inline]').forEach(node => {
+  if(node instanceof Element){
+    const el = node as Element
+    const href = el.getAttribute("href")!
+    const cssPath = new URL(href, indexUrl)
+    const cssFileContent = Deno.readFileSync(cssPath.pathname)
+    const cssFileText = decoder.decode(cssFileContent)
+    const cssMinifiedText = minify("css", cssFileText)
+
+    const style = doc.createElement("style")
+    style.innerHTML = cssMinifiedText
+    el.replaceWith(style)
+  }
+})
+
+
 console.log(minifyHTML(doc.documentElement!.outerHTML, {
   minifyCSS: true,
   minifyJS: true
