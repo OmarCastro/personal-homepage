@@ -12,4 +12,5 @@ cp -R css/* build/css
 cp -R js/* build/js
 cp -R imgs/* build/imgs
 cp -R icons/* build/icons
+cp -R fonts/* build/fonts
 buildfiles/minify-html > build/index.html
