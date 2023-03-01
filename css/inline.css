@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: local('Quicksand Regular'), 
-  local('Quicksand-Regular'), url('../fonts/quicksand/Quicksand-Regular.ttf') format('truetype');
+  local('Quicksand-Regular'), url('fonts/Quicksand-Regular.ttf') format('truetype');
 }
 
 .page {
@@ -54,36 +54,73 @@
 /* TOP BAR */
 
 .top-bar {
-    z-index: 2;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    inset: 0 0 auto 0;
-    background: white;
-    font-size: 16px;
-    height: 60px;
-    line-height: 60px;
-    text-transform: uppercase;
-    border-bottom: #369 1px solid;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-  }
-  
-  .topbar-buttons {
-    display: flex;
-    flex:1;
-    justify-content: flex-end;
-  }
-  
-  .topbar-button {
-    display: inline-block;
-    height: 60px;
-    text-decoration: none;
-    background: none;
-    padding: 0px 20px;
-  }
-  
-  .topbar-button:before {
-    font-size: 20px;
-    margin-right: 0.5em;
-  }
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  inset: 0 0 auto 0;
+  background: white;
+  font-size: 16px;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  border-bottom: #369 1px solid;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+.topbar-buttons {
+  display: flex;
+  flex:1;
+  justify-content: flex-end;
+}
+
+.topbar-button {
+  display: inline-block;
+  height: 60px;
+  text-decoration: none;
+  background: none;
+  padding: 0px 20px;
+}
+
+.topbar-button:before {
+  font-size: 20px;
+  margin-right: 0.5em;
+}
+
+/* TOP LEFT MENU BUTTON */
+.menu-button {
+  padding: 0px;
+  width: 60px;
+  font-size: 40px;
+  border: none;
+  outline: none;
+}
+
+/* CONTENT */
+
+.main-content {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* TOP BAR VERTICAL NAVIGATION */
+
+.navigation {
+  box-sizing: border-box;
+  position: fixed;
+  top: 61px;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  z-index: 3;
+  background: white;
+  transition: width 250ms linear;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
