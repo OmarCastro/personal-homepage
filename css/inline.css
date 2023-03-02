@@ -154,10 +154,11 @@ html {
   max-width: 60%;
 }
 .work-canvas {
-  max-width: 30%;
+  width: 30%;
   margin: 0 5%;
+  text-align: center;
 }
 .work-image {
   border-radius: 3%;
-  width: 100%;
+  max-height: 15em;
 }
