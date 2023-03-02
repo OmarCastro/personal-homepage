@@ -4,13 +4,13 @@
   font-weight: 400;
   src: local('Quicksand Regular'), 
   local('Quicksand-Regular'), url('fonts/Quicksand-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 body,
 html {
   margin: 0;
   font-family: Quicksand, Arial, Helvetica, sans-serif;
-  font-display: swap;
   overflow-x: hidden;
   height: 100%;
 }
