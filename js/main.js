@@ -1,14 +1,6 @@
 const $ = document.querySelector.bind(document)
 const $all = document.querySelectorAll.bind(document)
 
-const pages = {
-  main: $('.page--main'),
-  about: $('.page--about'),
-  skills: $('.page--skills'),
-  works: $('.page--works'),
-  contact: $('.page--contact'),
-};
-
 const currentPage = () => $(".page:target") || $('.page--main')
 
 function navigateToMainPage(){
@@ -16,21 +8,21 @@ function navigateToMainPage(){
   history.replaceState('', document.title, window.location.pathname)
 }
 
-const pagelist = Object.freeze(Object.keys(pages).map(name => pages[name]))
+const pagelist = [$('.page--main'), ...$all('.page:target:not(.page--main)')]
 
 function gotoNextPage(){
   const index = pagelist.indexOf(currentPage());
   if(index >= pagelist.length - 1){ return }
   const newId = pagelist[index+1].getAttribute("id")
   newId == null ? navigateToMainPage() : location.hash = newId;
-};
+}
 
 function gotoPreviousPage(){
   const index = pagelist.indexOf(currentPage());
   if(index <= 0){ return }
   const newId = pagelist[index-1].getAttribute("id")
   newId == null ? navigateToMainPage() : location.hash = newId;
-};
+}
 
 document.addEventListener('keydown', ({key}) => {
   switch(key){
