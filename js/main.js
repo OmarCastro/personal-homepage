@@ -7,25 +7,26 @@ const pages = {
   skills: $('.page--skills'),
   works: $('.page--works'),
   contact: $('.page--contact'),
-  get current() { return $(".page:target") || $('.page--main') }
 };
+
+const currentPage = () => $(".page:target") || $('.page--main')
 
 function navigateToMainPage(){
   location.hash = ""
   history.replaceState('', document.title, window.location.pathname)
 }
 
-const pagelist = Object.freeze(Object.keys(pages).filter(name => name !== "current").map(name => pages[name]))
+const pagelist = Object.freeze(Object.keys(pages).map(name => pages[name]))
 
 function gotoNextPage(){
-  const index = pagelist.indexOf(pages.current);
+  const index = pagelist.indexOf(currentPage());
   if(index >= pagelist.length - 1){ return }
   const newId = pagelist[index+1].getAttribute("id")
   newId == null ? navigateToMainPage() : location.hash = newId;
 };
 
 function gotoPreviousPage(){
-  const index = pagelist.indexOf(pages.current);
+  const index = pagelist.indexOf(currentPage());
   if(index <= 0){ return }
   const newId = pagelist[index-1].getAttribute("id")
   newId == null ? navigateToMainPage() : location.hash = newId;
@@ -36,10 +37,6 @@ document.addEventListener('keydown', ({key}) => {
     case "ArrowLeft": gotoPreviousPage(); break
     case "ArrowRight": gotoNextPage(); break
   }
-});
-
-window.addEventListener('hashchange', () => {
-  current = $(".page:target") || $('.page--main');
 });
     
 function checkDirection(touchstartX, touchendX) {
@@ -57,6 +54,7 @@ document.addEventListener('touchstart', e => {
   }, {once: true})
 })
 
+// prevents page refresh
 document.addEventListener('click', e => {
   if(e.target.closest('.home-button')){
     e.preventDefault()
