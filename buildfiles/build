@@ -2,15 +2,19 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd "$SCRIPT_DIR"/..
 
+echo "cleaning build"
 # clean
 rm -rf build
 
 # build dist & doumentation
 mkdir -p build/css build/js build/js build/imgs build/icons 
 
+echo "copying assets"
 cp -R css/* build/css
 cp -R js/* build/js
 cp -R imgs/* build/imgs
 cp -R icons/* build/icons
 cp -R fonts/* build/fonts
+
+echo "minifying html"
 buildfiles/minify-html > build/index.html
