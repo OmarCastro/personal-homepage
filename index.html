@@ -12,41 +12,47 @@
     <meta name="description" content="Omar Castro Homepage">
   </head>
   <body>
+    <button class="topbar-button menu-button" title="menu">≡</button>
+    <ul class="navigation">
+      <li class="navigation__item"><a class="navigation__link navigation__link--about" href="#/about">About</a></li>
+      <li class="navigation__item"><a class="navigation__link navigation__link--skills" href="#/skills">Skills</a></li>
+      <li class="navigation__item"><a class="navigation__link navigation__link--works" href="#/works">Works</a></li>
+      <li class="navigation__item"><a class="navigation__link navigation__link--contact" href="#/contact">Contact</a></li>
+    </ul>
+
+    <div class="top-bar">
+      <a class="topbar-button home-button pagelink-main" href="#/home">Omar Castro</a>
+  
+      <div class="topbar-buttons">
+        <a class="topbar-button button pagelink-about" href="#/about">About</a>
+        <a class="topbar-button button pagelink-skills" href="#/skills">Skills</a>
+        <a class="topbar-button button pagelink-works" href="#/works">Works</a>
+        <a class="topbar-button button pagelink-contact" href="#/contact">Contact</a>
+      </div> 
+    </div>
     <div class="main-content">
-      <div class="page page--contact" is="home-page-section" id="/contact">
-        <div class="contact">
-          <div class="contact-box">
-            <div class="title">Contact</div>
-            <div class="contact-info">
-              <table>
-                <tr>
-                  <td>📧 Email:</td>
-                  <td>omar.castro.360&#64;gmail.com</td>
-                </tr>
-                <tr>
-                  <td>🏠 Homepage:</td>
-                  <td><a href="https://omarcastro.website/">https://omarcastro.website</a></td>
-                </tr>
-              </table>
-            </div>
-            <div class="title"><span>Social networks</span></div>
-            <table>
-              <tr>
-                <td>⌨️ Github:</td>
-                <td><a href="https://github.com/OmarCastro/" target="_blank" rel="noopener noreferrer">https://github.com/OmarCastro/</td>
-              </tr>
-              <tr>
-                <td>📜 Linkedin:</td>
-                <td><a href="http://www.linkedin.com/pub/omar-castro/6a/221/aab" target="_blank" rel="noopener noreferrer">http://www.linkedin.com/pub/omar-castro/6a/221/aab/</a></td>
-              </tr>
-            </table>
+      <div class="page page--main" is="home-page-section" id="/home">
+        <div class="main-introduction">
+          <h1>Omar Castro</h1>
+          <div class="swipe-notification">Swipe to change page</div>
+        </div>
+      </div>
+
+      <div class="page page--about" is="home-page-section" id="/about" loading="lazy">
+        <div class="title">About</div>
+        <div class="profile">
+          <div class="round image profile-canvas">
+            <img class="profile-image" src="imgs/me.webp" alt="Omar's Photo">
           </div>
-          <div class="qr-contact">
-            <img src="imgs/qr-contact.svg" loading="lazy">
-            <div>Want to save into your phone contacts?<br> You can do it scanning this QR code</div>
+          <div class="text profile-text">
+            <i>Omar Alejandro Castillo de Castro</i>, born in Santo Domingo, Dominican Repubic, is an engineer graduated from
+            the Faculty of Engineering of University of Porto (FEUP) in the master's degree of Informatics and Computing.
+            A creative, hard-working, adaptable, caring and responsible person. He likes traveling (not alone) and have a fit body.
+            He has interest in software management, FullStack Web engineering, robotics, UX.
           </div>
         </div>
       </div>
+
 
       <div class="page page--skills" is="home-page-section" id="/skills">
         <div class="title">Skills</div>
@@ -103,13 +109,13 @@
             <div class="clearfloat"></div>
           </div>
         
-        <div class="work">
-        
-          <div class="work-canvas"><img class="work-image" src="imgs/ARFS.jpg" alt="AR Fruit Samurai controller" loading="lazy"></div>
-          <div class="work-description">
-            <h2>AR Fruit Samurai</h2>
-        
-            A game based on augmented reality where you cut virtual fruits with that come from a basket, a virtual sword, which in reality is made of paper, unfortunately, to enjoy the game you had to have a high frame-rate camera, because you may pass a fruit without cutting it due to sheer swing speed and a low framerate camera, I played with a smartphone camera, so I know how it feels.
+          <div class="work">
+          
+            <div class="work-canvas"><img class="work-image" src="imgs/ARFS.jpg" alt="AR Fruit Samurai controller" loading="lazy"></div>
+            <div class="work-description">
+              <h2>AR Fruit Samurai</h2>
+          
+              A game based on augmented reality where you cut virtual fruits with that come from a basket, a virtual sword, which in reality is made of paper, unfortunately, to enjoy the game you had to have a high frame-rate camera, because you may pass a fruit without cutting it due to sheer swing speed and a low framerate camera, I played with a smartphone camera, so I know how it feels.
             </div>
             <div class="clearfloat"></div>
           </div>  
@@ -121,48 +127,43 @@
               An challenging variant of an asteroid game. It is challenging because the world rotates around the ship instead the ship rotating in the world. The rules to win are simple, destroy the surrounding asteroids while surviving against invading enemy alien ships with better accurancy than a sniper. You can play the game <a target="_blank" href="http://paginas.fe.up.pt/~ei08158/4ano/djco/asteroids/">here.</a>
             </div>
             <div class="clearfloat"></div>
-            </div>   
-          </div>
+          </div>   
         </div>
-
-        <div class="page page--about" is="home-page-section" id="/about" loading="lazy">
-          <div class="title">About</div>
-          <div class="profile">
-            <div class="round image profile-canvas">
-              <img class="profile-image" src="imgs/me.webp" alt="Omar's Photo">
-            </div>
-            <div class="text profile-text">
-              <i>Omar Alejandro Castillo de Castro</i>, born in Santo Domingo, Dominican Repubic, is an engineer graduated from
-              the Faculty of Engineering of University of Porto (FEUP) in the master's degree of Informatics and Computing.
-              A creative, hard-working, adaptable, caring and responsible person. He likes traveling (not alone) and have a fit body.
-              He has interest in software management, FullStack Web engineering, robotics, UX.
-            </div>
-          </div>
-        </div>
-
-
-        <div class="page page--main" is="home-page-section">
-          <div class="main-introduction">
-            <h1>Omar Castro</h1>
-            <div class="swipe-notification">Swipe to change page</div>
-          </div>
       </div>
-      <div class="top-bar">
-        <button class="topbar-button menu-button" title="menu">≡</button>
-        <ul class="navigation">
-          <li class="navigation__item"><a class="navigation__link navigation__link--about" href="#/about">About</a></li>
-          <li class="navigation__item"><a class="navigation__link navigation__link--skills" href="#/skills">Skills</a></li>
-          <li class="navigation__item"><a class="navigation__link navigation__link--works" href="#/works">Works</a></li>
-          <li class="navigation__item"><a class="navigation__link navigation__link--contact" href="#/contact">Contact</a></li>
-        </ul>
-        <a class="topbar-button home-button pagelink-main" href=".">Omar Castro</a>
-    
-        <div class="topbar-buttons">
-          <a class="topbar-button button pagelink-about" href="#/about">About</a>
-          <a class="topbar-button button pagelink-skills" href="#/skills">Skills</a>
-          <a class="topbar-button button pagelink-works" href="#/works">Works</a>
-          <a class="topbar-button button pagelink-contact" href="#/contact">Contact</a>
-        </div> 
+
+      <div class="page page--contact" is="home-page-section" id="/contact">
+        <div class="contact">
+          <div class="contact-box">
+            <div class="title">Contact</div>
+            <div class="contact-info">
+              <table>
+                <tr>
+                  <td>📧 Email:</td>
+                  <td>omar.castro.360&#64;gmail.com</td>
+                </tr>
+                <tr>
+                  <td>🏠 Homepage:</td>
+                  <td><a href="https://omarcastro.website/">https://omarcastro.website</a></td>
+                </tr>
+              </table>
+            </div>
+            <div class="title"><span>Social networks</span></div>
+            <table>
+              <tr>
+                <td>⌨️ Github:</td>
+                <td><a href="https://github.com/OmarCastro/" target="_blank" rel="noopener noreferrer">https://github.com/OmarCastro/</td>
+              </tr>
+              <tr>
+                <td>📜 Linkedin:</td>
+                <td><a href="http://www.linkedin.com/pub/omar-castro/6a/221/aab" target="_blank" rel="noopener noreferrer">http://www.linkedin.com/pub/omar-castro/6a/221/aab/</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="qr-contact">
+            <img src="imgs/qr-contact.svg" loading="lazy">
+            <div>Want to save into your phone contacts?<br> You can do it scanning this QR code</div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
