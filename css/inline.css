@@ -5,11 +5,11 @@
 }
 html {
   scroll-snap-type: x mandatory;
-  background: fixed left 0 top 60px / 100% calc(100% - 60px) no-repeat radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%), rgb(243, 243, 243);
   overflow-y: hidden;
   --top-button-width: 10em;
   --top-color2: hsl(24deg, 16%, 80%);
   --top-color1: #369;
+  --sidebar-width: 0;
 }
 body {
   margin: 0;
@@ -37,17 +37,22 @@ body {
     scroll-snap-align: center;
     box-sizing: border-box;
     position: relative;
+    transition: clip-path 250ms linear;
     --dot-color: #ccc;
-    --dot-bg: local top 60px left 0 / 22px 22px repeat radial-gradient(circle, var(--dot-color), transparent 2px)
+    --dot-bg: local top 60px left 0 / 22px 22px repeat radial-gradient(circle, var(--dot-color), transparent 2px);
+    --radial-bg: fixed left 0 top 60px / 100% calc(100% - 60px) no-repeat radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%), rgb(243, 243, 243);
+
 }
 
 .page--main{
-  background: fixed left 60px top 0/ 10em 60px no-repeat linear-gradient(var(--top-color2), var(--top-color2)), var(--dot-bg);
-  clip-path: polygon(0% 60px,60px 60px, 60px 0, calc(60px + 10em) 0,calc(60px + 10em) 60px,100% 60px,100% 100%,0 100%);
+  --top-spy-bg: fixed left 60px top 0/ 10em 60px no-repeat linear-gradient(var(--top-color2), var(--top-color2));
+  background: var(--top-spy-bg), var(--dot-bg), var(--radial-bg);
+  clip-path: polygon(var(--sidebar-width) 60px,60px 60px, 60px 0, calc(60px + 10em) 0,calc(60px + 10em) 60px,100% 60px,100% 100%,var(--sidebar-width) 100%);
 }
 .page:not(.page--main){
-  background: fixed right calc( ( 3 - var(--tab-index) ) * var(--top-button-width) ) top / var(--top-button-width) 60px no-repeat linear-gradient(var(--top-color2), var(--top-color2)), var(--dot-bg);
-  clip-path: polygon(0% 60px,calc(100% - ( 4 - var(--tab-index) ) * var(--top-button-width)) 60px, calc(100% - ( 4 - var(--tab-index) ) * var(--top-button-width)) 0, calc(100% - ( 3 - var(--tab-index) )  * var(--top-button-width)) 0,calc(100% - ( 3 - var(--tab-index) ) * var(--top-button-width)) 60px,100% 60px,100% 100%,0 100%);
+  --top-spy-bg: fixed right calc( ( 3 - var(--tab-index) ) * var(--top-button-width) ) top / var(--top-button-width) 60px no-repeat linear-gradient(var(--top-color2), var(--top-color2))
+  background: var(--top-spy-bg), var(--dot-bg), var(--radial-bg);
+  clip-path: polygon(var(--sidebar-width) 60px,calc(100% - ( 4 - var(--tab-index) ) * var(--top-button-width)) 60px, calc(100% - ( 4 - var(--tab-index) ) * var(--top-button-width)) 0, calc(100% - ( 3 - var(--tab-index) )  * var(--top-button-width)) 0,calc(100% - ( 3 - var(--tab-index) ) * var(--top-button-width)) 60px,100% 60px,100% 100%,var(--sidebar-width) 100%);
 }
 
 
@@ -135,9 +140,8 @@ body {
   bottom: 0;
   padding: 0;
   margin: 0;
-  width: 0;
+  width: var(--sidebar-width, 0);
   z-index: 3;
-  background: white;
   transition: width 250ms linear;
   overflow-x: hidden;
   overflow-y: auto;

@@ -78,21 +78,27 @@
 
 }
 
-
-
+.navigation:focus-within,
+.navigation:hover,
 .menu-button:hover ~ .navigation {
   border-right: var(--top-color1) 1px solid;
-  width: 60px;
 }
-.navigation:hover,
+
+.menu-button:hover ~ :is(.navigation, .page) {
+  --sidebar-width: 60px
+}
+
+.navigation:hover, 
+.navigation:hover ~ .page,
 .navigation:focus-within,
-.menu-button:focus ~ .navigation {
-  border-right: var(--top-color1) 1px solid;
-  width: 15em;
+.navigation:focus-within ~ .page,
+.menu-button:focus ~ :is(.navigation, .page) {
+  --sidebar-width: 15em;
 }
+
 @media screen and (max-device-width: 1028px) {
-  .menu-button:hover ~ .navigation {
-    width: 15em;
+  .menu-button:hover ~ :is(.navigation, .page) {
+    --sidebar-width: 15em;
   }
 }
 
