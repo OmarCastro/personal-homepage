@@ -48,10 +48,6 @@
   margin: 1em;
 }
 
-.main-content {
-  scroll-snap-type: x mandatory;
-}
-
 @media (max-width: 900px) { 
   body {
     --top-button-width: 7.5em
@@ -89,6 +85,7 @@
   width: 60px;
 }
 .navigation:hover,
+.navigation:focus-within,
 .menu-button:focus ~ .navigation {
   border-right: var(--top-color1) 1px solid;
   width: 15em;
