@@ -100,15 +100,6 @@
 }
 
 
-.swipe-notification {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 1em;
-}
-
-
-
 /*
 * PROFILE PAGE START
 */
@@ -412,13 +403,7 @@ body.phone .qr-contact {
 body.phone .page.out-of-current {
   display: none;
 }
-body.phone .swipe-notification {
-  left: -20px;
-  right: -20px;
-  padding-top: 1em;
-  text-align: center;
-  border-top: #369 1.5px solid;
-}
+
 body.phone .work {
   position: relative;
   margin-bottom: 0;
@@ -468,7 +453,4 @@ body.phone .work-canvas {
     -ms-transform: translateX(0%);
     transform: translateX(0%);
   }
-}
-.swipe-notification {
-  display: none;
 }
