@@ -72,10 +72,6 @@
     --top-button-width: 0
   }
 
-  .page:not(.page--main), .page--main{
-    background: transparent;
-  }
-
 }
 
 .navigation:focus-within,
