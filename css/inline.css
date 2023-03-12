@@ -4,12 +4,34 @@
   font-display: swap;
 }
 
-body,
-html {
+body {
   margin: 0;
   font-family: Quicksand, Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   height: 100%;
+  --top-button-width: 10em;
+  --top-color2: hsl(24deg, 16%, 80%);
+  --top-color1: #369;
+}
+
+
+.main-content {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.main-content::after {
+  content: " ";
+  position: fixed;
+  inset: 60px 0 0 0;
+  pointer-events: none;
+  z-index: -2;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%), rgb(243, 243, 243);
 }
 
 .title {
@@ -24,64 +46,61 @@ html {
 }
 
 .page {
+    flex-basis: 100%;
+    padding-top: 60px;
     height: 100%;
     overflow-y: auto;
-    position: absolute;
-    width: 100%;
+    min-width: 100vw;
+    scroll-snap-align: center;
     box-sizing: border-box;
-    display: none;
+    position: relative;
+
 }
 
-.page::after {
-    content: " ";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -2;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%), rgb(243, 243, 243);
-  }
+.page--main{
+  background: fixed left 60px top / 10em 60px no-repeat linear-gradient(var(--top-color2), var(--top-color2));
+  clip-path: polygon(0% 60px,60px 60px, 60px 0, calc(60px + 10em) 0,calc(60px + 10em) 60px,100% 60px,100% 100%,0 100%);
+}
+.page:not(.page--main){
+  background: fixed right calc( ( 3 - var(--tab-index) ) * var(--top-button-width) ) top / var(--top-button-width) 60px no-repeat linear-gradient(var(--top-color2), var(--top-color2));
+  clip-path: polygon(0% 60px,calc(100% - ( 4 - var(--tab-index) ) * var(--top-button-width)) 60px, calc(100% - ( 4 - var(--tab-index) ) * var(--top-button-width)) 0, calc(100% - ( 3 - var(--tab-index) )  * var(--top-button-width)) 0,calc(100% - ( 3 - var(--tab-index) ) * var(--top-button-width)) 60px,100% 60px,100% 100%,0 100%);
+}
 
-.page:target ~ .page--main { 
-    display: none;
-}
-.page:target, .page--main {
-    transform: none; 
-    display: block; 
-}
+
+
+.page--about { --tab-index: 0 }
+.page--skills { --tab-index: 1 }
+.page--works { --tab-index: 2 }
+.page--contact { --tab-index: 3 }
+
+
 
 /* NAVIGATION ICONS */
-:is(.navigation__link--about, .pagelink-about)::before{ content: "🗿"; }
-:is(.navigation__link--works, .pagelink-works)::before{ content: "🏯"; }
-:is(.navigation__link--skills, .pagelink-skills)::before{ content: "📋"; }
-:is(.navigation__link--contact, .pagelink-contact)::before{ content: "📬"; }
+:is(.navigation__link--about, .pagelink-about)::before{ content: "♔"; }
+:is(.navigation__link--works, .pagelink-works)::before{ content: "⚒"; }
+:is(.navigation__link--skills, .pagelink-skills)::before{ content: "☑"; }
+:is(.navigation__link--contact, .pagelink-contact)::before{ content: "☎"; }
 
 
 /* NAVIGATION STATES */
 :is(.navigation__link, .topbar-button):hover,
-:is(.navigation__link, .topbar-button):focus,
-.page--about:target ~ .top-bar :is(.navigation__link--about, .pagelink-about),
-.page--skills:target ~ .top-bar :is(.navigation__link--skills, .pagelink-skills),
-.page--works:target ~ .top-bar :is(.navigation__link--works, .pagelink-works),
-.page--contact:target ~ .top-bar :is(.navigation__link--contact, .pagelink-contact)
-{
-  background: #369;
-  color: white;
+:is(.navigation__link, .topbar-button):focus {
+  background-color: var(--top-color2);
 }
 
 /* TOP BAR */
 
 .top-bar {
   z-index: 2;
-  padding: 0;
+  padding: 0 0 0 60px;
   margin: 0;
   position: fixed;
   inset: 0 0 auto 0;
-  background: white;
   font-size: 16px;
   height: 60px;
   line-height: 60px;
   text-transform: uppercase;
-  border-bottom: #369 1px solid;
+  border-bottom: var(--top-color1) 1px solid;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
 }
@@ -98,11 +117,18 @@ html {
   text-decoration: none;
   background: none;
   padding: 0px 20px;
+  width: var(--top-button-width);
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .topbar-button:before {
   font-size: 20px;
   margin-right: 0.5em;
+}
+
+.topbar-button.home-button{
+  width: auto;
 }
 
 /* TOP LEFT MENU BUTTON */
@@ -112,17 +138,8 @@ html {
   font-size: 40px;
   border: none;
   outline: none;
-}
-
-/* CONTENT */
-
-.main-content {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
+  z-index: 3;
+  position: absolute;
 }
 
 /* TOP BAR VERTICAL NAVIGATION */
@@ -140,6 +157,7 @@ html {
   transition: width 250ms linear;
   overflow-x: hidden;
   overflow-y: auto;
+  position: absolute;
 }
 
 .work {

@@ -24,4 +24,15 @@
   .main-content {
     top: 0;
     left: 60px;
+    padding-top: 0;
   }
+
+  .main-content::after {
+    top: 0;
+  }
+
+  .page {
+    padding-top: 0;
+    clip-path: none !important;
+  }
+

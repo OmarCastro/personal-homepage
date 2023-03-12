@@ -15,7 +15,7 @@
   cursor: pointer;
   height: 60px;
   box-sizing: border-box;
-  border-bottom: #369 1px solid;
+  border-bottom: var(--top-color1) 1px solid;
 }
 
 .navigation__link {
@@ -48,7 +48,15 @@
   margin: 1em;
 }
 
+.main-content {
+  scroll-snap-type: x mandatory;
+}
+
 @media (max-width: 900px) { 
+  body {
+    --top-button-width: 7.5em
+  }
+
   /* hide navigation icons on small enough hoziontal space */
   .topbar-buttons > .topbar-button:before {
     content: none;
@@ -60,17 +68,29 @@
   .topbar-buttons {
     display: none;
   }
+
+  .page:not(.page--main)::before {
+    content: none;
+  }
+  body {
+    --top-button-width: 0
+  }
+
+  .page:not(.page--main), .page--main{
+    background: transparent;
+  }
+
 }
 
 
 
 .menu-button:hover ~ .navigation {
-  border-right: #369 1px solid;
+  border-right: var(--top-color1) 1px solid;
   width: 60px;
 }
 .navigation:hover,
 .menu-button:focus ~ .navigation {
-  border-right: #369 1px solid;
+  border-right: var(--top-color1) 1px solid;
   width: 15em;
 }
 @media screen and (max-device-width: 1028px) {
