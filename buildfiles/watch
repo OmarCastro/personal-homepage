@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd "$SCRIPT_DIR"/..
-while inotifywait -r -e modify .; do buildfiles/build; done
+while :; do 
+    buildfiles/build
+    inotifywait -r -e modify .
+done
