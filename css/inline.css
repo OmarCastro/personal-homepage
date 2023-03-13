@@ -195,6 +195,19 @@ body {
   overflow-y: auto;
 }
 
+/* main page */
+
+.main-introduction {
+  height: auto;
+}
+
+.swipe-notification {
+  position: absolute;
+  inset: auto 2em 2em auto;
+}
+
+/* work page */
+
 .work {
   position: relative;
   margin-bottom: 5em;

@@ -1,0 +1,12 @@
+.topbar-buttons, .page::after {
+    display: none;
+}
+
+.page:not(.page--main){
+    clip-path: var(--default-clip-path);
+}
+
+body {
+    --top-button-width: 0
+}
+    
