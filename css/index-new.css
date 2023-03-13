@@ -343,14 +343,7 @@
 body.no-phone .page {
   transition: transform 400ms ease;
 }
-body.no-phone .page.current {
-  animation-timing-function: ease;
-  animation-duration: 400ms;
-  animation-name: fromleft;
-}
-body.no-phone .page.previous ~ .page.current {
-  animation-name: fromright;
-}
+
 body.no-phone .page.out-of-current {
   display: block;
   transform: translate(-100%);
@@ -388,41 +381,4 @@ body.phone .work-description {
 }
 body.phone .work-canvas {
   display: none;
-}
-/**ANIMATIONS */
-@-webkit-keyframes fromright {
-  0% {
-    -webkit-transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateX(0%);
-  }
-}
-@keyframes fromright {
-  0% {
-    -ms-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-  100% {
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-  }
-}
-@-webkit-keyframes fromleft {
-  0% {
-    -webkit-transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0%);
-  }
-}
-@keyframes fromleft {
-  0% {
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  100% {
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-  }
 }
