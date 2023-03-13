@@ -61,13 +61,14 @@
 
 @media (max-width: 720px) { 
   /* on even smaller screen, hide top menu buttons on right side altogether */
-  .topbar-buttons {
+  .topbar-buttons, .page::after {
     display: none;
   }
 
-  .page:not(.page--main)::before {
-    content: none;
+  .page:not(.page--main){
+    clip-path: var(--default-clip-path);
   }
+
   body {
     --top-button-width: 0
   }

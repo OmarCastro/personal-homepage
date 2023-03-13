@@ -1,9 +1,9 @@
-.top-bar {
-  height: 0;
-  border: none;
+html {
+  --top-bar-margin: 0px;
+
 }
 
-.home-button, .topbar-buttons {
+.top-bar {
   display: none;
 }
 
@@ -16,24 +16,20 @@
 
 .navigation {
   box-sizing: content-box;
-  width: 60px;
   border-top: #369 1px solid;
   border-right: #369 1px solid;
 }
 
-.main-content {
-  top: 0;
-  left: 60px;
-  padding-top: 0;
-}
-
-.main-content::after {
-  top: 0;
+.navigation, .page {
+  --sidebar-width: 60px
 }
 
 .page {
   padding-top: 0;
-  clip-path: none !important;
+  padding-left: 60px;
+  --default-clip-path: polygon(60px 0, 100% 0,100% 100%, var(--sidebar-width) 100%, var(--sidebar-width) 60px, 60px 60px);
+  background: var(--dot-bg), var(--radial-bg);
+
 }
 
 .page::after {
