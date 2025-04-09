@@ -38,6 +38,13 @@
   text-decoration: none;
 }
 
+qr-code {
+  width: 400px;
+  height: 400px;
+  --qrcode-resize: true;
+}
+
+
 
 /* PAGE STYLES */
 

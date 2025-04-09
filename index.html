@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/smartphones.css" media="only screen and (max-width: 720px)">
     <link rel="stylesheet" type="text/css" href="css/smartphones-landscape.css" media="only screen and (max-device-width: 670px) and (orientation: landscape)">
     <script async type="module" src="https://omarcastro.github.io/its-a-color-wheel/dist/color-wheel.element.min.js?named=color-wheel?named=color-wheel"></script>
+    <script async type="module" src="https://omarcastro.github.io/its-a-qrcode/dist/qrcode.element.min.js?named=qr-code"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
     <meta name="description" content="Omar Castro Homepage">
   </head>
@@ -153,7 +154,18 @@
           </table>
         </div>
         <div class="qr-contact">
-          <img src="imgs/qr-contact.svg" loading="lazy">
+          <qr-code>
+            BEGIN:VCARD
+            VERSION:2.1
+            FN:Omar Castro
+            N:Castro;Omar
+            TITLE:Mr.
+            TEL;CELL:+351914578611
+            EMAIL;HOME;INTERNET:omar.castro.360@gmail.com
+            URL:http://omarcastro.github.io
+            ADR:;;;Vila Nova de Gaia;;;Portugal
+            END:VCARD
+          </qr-code>
           <div>Want to save into your phone contacts?<br> You can do it scanning this QR code</div>
         </div>
       </div>
