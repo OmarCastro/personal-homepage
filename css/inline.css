@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Quicksand';
-  src: local('Quicksand-Regular'), url('fonts/Quicksand-Regular.ttf') format('truetype');
+  src: local('Quicksand-Regular'), url('../fonts/quicksand/Quicksand-Regular.ttf') format('truetype');
   font-display: swap;
 }
 html {
