@@ -173,6 +173,78 @@ qr-code {
     width: 1428px;
   }
 }
+
+.skill {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 2px 0;
+  background: #442277;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+  padding: 0px;
+  font-size: 1em;
+  font-family: Quicksand;
+  align-content: center;
+  font-style: italic;
+  transition: all 0.25s cubic-bezier(0.8, 0, 0.2, 1);
+
+
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    vertical-align: middle;
+    text-align: center;
+    font-family: Quicksand;
+    line-height: initial;
+    transition: all 0.25s cubic-bezier(0.8, 0, 0.2, 1);
+    transform: scale(1);
+
+    background-image: var(--icon, url("../icons/html5css3.png"));
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+  }
+
+  &:not(:hover){
+    color: transparent;
+  }
+
+  &:hover {
+    font-size: 2em;
+    &::before {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  
+}
+
+.skill--html {
+  background-color: #eeeeee;
+  color: #111111;
+  --icon: url("../icons/html5css3.png")
+}
+
+.skill--js {
+  background-color: #323330;
+  color: #eeeeee;
+  --icon: url("../icons/js-logo.svg")
+}
+
+.skill--dart {
+  background-color: #eeeeee;
+  color: #111111;
+  --icon: url("../icons/dart-logo.png")
+}
+
+
 .box {
   position: relative;
   display: inline-block;
@@ -228,7 +300,7 @@ qr-code {
   white-space: pre-line;
 }
 .logo-js::before {
-  background-image: url("../icons/js-logo.png");
+  background-image: url("../icons/js-logo.svg");
 }
 .logo-js {
   background-color: #323330;
@@ -283,13 +355,7 @@ qr-code {
   background-color: #eeeeee;
   color: #111111;
 }
-.logo-dart::before {
-  background-image: url("../icons/dart-logo.png");
-}
-.logo-dart {
-  background-color: #eeeeee;
-  color: #111111;
-}
+
 /*
 * SKILLS PAGE END
 */
