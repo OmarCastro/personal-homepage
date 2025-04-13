@@ -234,7 +234,7 @@ qr-code {
 
 .skill--js {
   background-color: #323330;
-  color: #eeeeee;
+  color: #F0DB4F;
   --icon: url("../icons/js-logo.svg")
 }
 
@@ -244,117 +244,43 @@ qr-code {
   --icon: url("../icons/dart-logo.png")
 }
 
-
-.box {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  margin: 2px 0;
-  background: #442277;
-  color: white;
-  overflow: hidden;
-  text-align: center;
-  padding: 0px;
-  font-size: 25px;
-  font-family: Quicksand;
-  line-height: 200px;
-  vertical-align: middle;
-}
-.box::before,
-.box > i {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  content: "";
-  vertical-align: middle;
-  text-align: center;
-  font-family: Quicksand;
-  line-height: initial;
-  transition: all 0.25s cubic-bezier(0.8, 0, 0.2, 1);
-}
-.box > i {
-  top: 50%;
-  transform: translateY(-50%) scale(0);
-  opacity: 0;
-}
-.box::before {
-  transform: scale(1);
-  opacity: 1;
-  height: 100%;
-}
-.box:hover::before {
-  transform: scale(2);
-  opacity: 0;
-}
-.box:hover > i {
-  transform: translateY(-50%) scale(1);
-  opacity: 1;
-}
-.logo::before {
-  background-size: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.logo::after {
-  white-space: pre-line;
-}
-.logo-js::before {
-  background-image: url("../icons/js-logo.svg");
-}
-.logo-js {
-  background-color: #323330;
-  color: #eeeeee;
-}
-.logo-angular::before {
-  background-image: url("../icons/angular.png");
-}
-.logo-angular {
-  background-color: #3333ff;
-  color: #eeeeee;
-}
-.logo-cpp::before {
-  background-image: url("../icons/cpp-icon.png");
-}
-.logo-cpp {
+.skill--cpp {
   background-color: #000000;
   color: #eeeeee;
+  --icon: url("../icons/cpp-icon.svg")
 }
-.logo-sails::before {
-  background-image: url("../icons/sails.png");
-}
-.logo-sails {
+
+.skill--java {
   background-color: #eeeeee;
-  color: #111111;
+  color: #E76F00;
+  --icon: url("../icons/Java_logo_and_wordmark.svg")
 }
-.logo-docker::before {
-  background-image: url("../icons/docker.png");
+
+.skill--react {
+  background-color: #323330;
+  color: #61dafb;
+  --icon: url(../icons/React-logo.svg)
 }
-.logo-docker {
+
+.skill--docker {
   background-color: #70afc1;
+  color: #394d54;
+  --icon: url(../icons/docker.png)
+}
+
+.skill--angular {
+  background-color: #3333ff;
   color: #eeeeee;
+  --icon: url(../icons/angular.svg)
 }
-.logo-windows::before {
-  background-image: url("../icons/windows.png");
-}
-.logo-windows {
-  background-color: #00adf1;
-  color: #eeeeee;
-}
-.logo-unity::before {
-  background-image: url("../icons/unity_icon.png");
-}
-.logo-unity {
+
+.skill--unity {
   background-color: #eeeeee;
   color: #111111;
+  --icon: url(../icons/unity_icon.png)
 }
-.logo-html::before {
-  background-image: url("../icons/html5css3.png");
-}
-.logo-html {
-  background-color: #eeeeee;
-  color: #111111;
-}
+
+
 
 /*
 * SKILLS PAGE END
