@@ -17,4 +17,4 @@ cp -R icons/* build/icons
 cp -R fonts/* build/fonts
 
 echo "minifying html"
-buildfiles/minify-html > build/index.html
+deno run --allow-read --allow-env --allow-write=build buildfiles/scripts/build-html.js index.html
