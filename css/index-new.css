@@ -42,6 +42,7 @@ qr-code {
   width: 400px;
   height: 400px;
   --qrcode-resize: true;
+  --qrcode-style: rounded;
 }
 
 
