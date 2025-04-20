@@ -281,6 +281,13 @@ qr-code {
   --icon: url(../icons/unity_icon.png)
 }
 
+.skill--vue {
+  background-color: #323330;
+  color: #41b883;
+  --icon: url(../icons/vue-logo.svg)
+}
+
+
 
 
 /*
