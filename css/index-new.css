@@ -287,7 +287,11 @@ qr-code {
   --icon: url(../icons/vue-logo.svg)
 }
 
-
+.skill--scala {
+  background-color: #22525e;
+  color: #eeeeee;
+  --icon: url(../icons/scala-logo.svg)
+}
 
 
 /*
