@@ -293,6 +293,11 @@ qr-code {
   --icon: url(../icons/scala-logo.svg)
 }
 
+.skill--kotlin {
+  background-color: #19191c;
+  color: #eeeeee;
+  --icon: url(../icons/kotlin-logo.svg)
+}
 
 /*
 * SKILLS PAGE END
