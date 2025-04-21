@@ -299,6 +299,13 @@ qr-code {
   --icon: url(../icons/kotlin-logo.svg)
 }
 
+.skill--ansible {
+  background-color: #111;
+  color: #eee;
+  --icon: url(../icons/ansible-mark-white.svg)
+}
+
+
 /*
 * SKILLS PAGE END
 */
