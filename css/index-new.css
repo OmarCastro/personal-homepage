@@ -182,7 +182,7 @@ qr-code {
   height: 200px;
   margin: 2px 0;
   background: #442277;
-  color: white;
+  color: #eee;
   overflow: hidden;
   text-align: center;
   padding: 0px;
@@ -303,6 +303,12 @@ qr-code {
   background-color: #111;
   color: #eee;
   --icon: url(../icons/ansible-mark-white.svg)
+}
+
+.skill--kubernetes {
+  background-color: #326ce5;
+  color: #eee;
+  --icon: url(../icons/kubernetes-logo.svg)
 }
 
 
