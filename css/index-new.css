@@ -116,6 +116,8 @@ qr-code {
   display: inline-block;
   width: 50%;
   margin: 1.5em;
+  box-sizing: border-box;
+  padding: 3em;
 }
 @media (orientation: portrait) {
   .profile-text {
