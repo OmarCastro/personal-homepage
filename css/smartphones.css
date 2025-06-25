@@ -3,7 +3,7 @@
 }
 
 .page:not(.page--main){
-    clip-path: var(--default-clip-path);
+    clip-path: polygon(60px 60px, 100% 60px,100% 100%, var(--sidebar-width) 100%, var(--sidebar-width) 60px, 60px 60px);
 }
 
 body {

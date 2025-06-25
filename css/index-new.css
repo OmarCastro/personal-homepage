@@ -140,10 +140,11 @@ qr-code {
   margin: 0 auto;
   padding: 0;
   display: block;
+  text-align: center;
 }
 @media screen and (min-width: 280px) {
   .skill-list {
-    width: 204px;
+    width: 90vw;
   }
 }
 @media screen and (min-width: 480px) {
@@ -180,8 +181,8 @@ qr-code {
 .skill {
   position: relative;
   display: inline-block;
-  width: 200px;
-  height: 200px;
+  width: min(200px, 42vw);
+  height: min(200px, 42vw);
   margin: 2px 0;
   background: #442277;
   color: #eee;
@@ -214,11 +215,11 @@ qr-code {
   
   }
 
-  &:not(:hover){
+  &:not(:hover, :focus){
     color: transparent;
   }
 
-  &:hover {
+  &:hover, &:focus {
     font-size: 2em;
     &::before {
       transform: scale(2);
