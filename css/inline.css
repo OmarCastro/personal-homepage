@@ -201,9 +201,16 @@ body {
   height: auto;
 }
 
+.main-introduction h1 {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -100%);
+}
+
 .swipe-notification {
   position: absolute;
-  inset: auto 2em 2em auto;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, 200%);
 }
 
 /* work page */
