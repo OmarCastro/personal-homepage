@@ -39,12 +39,15 @@
 }
 
 qr-code {
-  width: 400px;
+  width: min(400px, 90vw);
   height: 400px;
   --qrcode-resize: true;
   --qrcode-style: rounded;
 }
 
+color-wheel {
+  --radius: min(40vmin, 5cm);
+}
 
 
 /* PAGE STYLES */
@@ -350,6 +353,11 @@ qr-code {
 .qr-contact img,
 .contact-info img {
   width: 100%;
+}
+
+.contact-info table {
+  margin-left: auto;
+  margin-right: auto;
 }
 .contact-box {
   text-align: center;
