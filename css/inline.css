@@ -34,6 +34,7 @@ body {
     padding-top: 60px;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
     min-width: 100vw;
     scroll-snap-align: center;
     box-sizing: border-box;
