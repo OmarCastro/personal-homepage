@@ -39,6 +39,7 @@ body {
 .page {
     flex-basis: 100%;
     padding-top: 60px;
+    padding-bottom: 100px;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;

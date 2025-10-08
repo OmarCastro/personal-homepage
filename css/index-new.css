@@ -350,15 +350,43 @@ color-wheel {
   }
 }
 
-.qr-contact img,
-.contact-info img {
-  width: 100%;
+.qr-contact img {
+    width: 100%;
 }
 
-.contact-info table {
-  margin-left: auto;
-  margin-right: auto;
+.contact-info {
+  display: grid;
+  grid-template-columns: min-content min-content ;
+  width: 100%;
+  gap: 1ch;
+  margin: 1em;
 }
+
+
+.contact-info > label {
+  text-align: right;
+  font-weight: bold;
+}
+
+.contact-info > span {
+  text-align: left;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .contact-info {
+    grid-template-columns: min-content ;
+  }
+
+  .contact-info > :is(label, span) {
+    text-align: center;
+  }
+
+
+}
+
+
 .contact-box {
   text-align: center;
   white-space: nowrap;
